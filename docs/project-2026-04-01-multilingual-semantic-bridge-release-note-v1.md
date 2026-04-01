@@ -75,3 +75,5 @@ Possible later directions:
 - official retrieval-side experiments only if evidence justifies them
 
 Review trigger note: testing official Codex PR review path.
+
+Auto review trigger note: push after enabling Codex auto review.
