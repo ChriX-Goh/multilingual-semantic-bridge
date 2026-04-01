@@ -73,3 +73,5 @@ Possible later directions:
 - explicit benchmark harnesses
 - more systematic publication polish
 - official retrieval-side experiments only if evidence justifies them
+
+Review trigger note: testing official Codex PR review path.
