@@ -21,7 +21,7 @@ The skill follows one mainline pipeline:
 
 ## What problem it solves
 
-In many assistant environments, the user may ask in Chinese or another non-English language, while the most useful targets are named in English:
+In many assistant environments, the user may ask in another non-English language, while the most useful targets are named in English:
 - official docs
 - config keys
 - provider names
