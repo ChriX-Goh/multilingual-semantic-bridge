@@ -1,0 +1,17 @@
+{
+  "id": "multilingual-semantic-bridge",
+  "name": "Multilingual Semantic Bridge",
+  "description": "Narrow prompt-time automation layer for multilingual bridge activation.",
+  "activation": {
+    "onCapabilities": ["hook"]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": { "type": "boolean" },
+      "testTrigger": { "type": "string" },
+      "debug": { "type": "boolean" }
+    }
+  }
+}
