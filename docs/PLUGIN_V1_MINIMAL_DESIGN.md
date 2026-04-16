@@ -1,0 +1,94 @@
+# Multilingual Semantic Bridge — Plugin V1 Minimal Design
+
+Date: 2026-04-17 UTC+8
+Status: draft design
+
+## Objective
+
+Move the bridge from a useful but manually activated skill into a narrow automation layer that reduces activation failure for multilingual / cross-terminology queries.
+
+## V1 success condition
+
+For selected multilingual cases, the system should automatically preserve the original wording, derive a canonical intent and technical pivot when needed, and improve prompt-side retrieval/routing guidance without requiring the user to remind the assistant that the bridge exists.
+
+## Recommended first implementation shape
+
+### Plugin shape
+- native OpenClaw plugin
+- non-capability or hook-focused plugin
+- narrow manifest + narrow runtime entry
+
+### First hook
+- `before_prompt_build`
+
+Reason:
+- official docs describe this as the preferred place for prompt mutation work
+- the bridge's first goal is to improve prompt-time retrieval/routing framing, not to replace model resolution or backend storage
+
+## Proposed V1 flow
+
+1. observe the incoming user turn
+2. score whether bridge activation is likely useful
+3. if not useful, do nothing
+4. if useful:
+   - preserve original wording
+   - derive canonical intent
+   - derive technical pivot when justified
+   - add a compact routing hint block to prompt-build context
+5. leave actual memory/docs/skill/runbook retrieval on official/core surfaces
+
+## Activation heuristics for V1
+
+The plugin should activate only when at least one of these is true:
+- user wording is non-English or mixed-language and the likely target is English-heavy technical terminology
+- wording is colloquial/symptom-first and likely hides a more canonical technical target
+- likely target class is one of:
+  - official docs
+  - config keys
+  - CLI commands
+  - skill metadata
+  - runbook names
+  - exact operational files
+- phrasing drift or synonym variation is likely to reduce memory/vector hit quality
+
+## Guardrails
+
+- keep the plugin detachable
+- keep prompt mutation compact and inspectable
+- do not auto-fire on every multilingual turn
+- do not overwrite original wording
+- do not add broad speculative rewrites when the exact target is already explicit
+- do not treat memory as the default target for everything
+
+## What remains in the skill
+
+The skill still owns:
+- the explicit bridge method
+- the richer reasoning discipline
+- long-form guidance and examples
+- durable mapping/persistence guidance
+- human-invoked deep bridge behavior
+
+## What the plugin adds
+
+The plugin adds:
+- automatic bridge activation
+- automatic compact bridge context injection
+- lower dependence on user reminders or lucky invocation
+
+## Open questions before implementation
+
+1. What exact hook payload should be mutated in the current OpenClaw version?
+2. How should the plugin expose its own debug signal for validation without spamming normal turns?
+3. Should V1 keep learned mappings purely markdown-first, or keep plugin runtime stateless?
+4. Should V1 live in this repo as a sibling package to the skill, or in a separate repo/package later?
+
+## Immediate next coding step
+
+Read the exact current `before_prompt_build` hook contract and scaffold a plugin package that does nothing except:
+- load cleanly
+- register the hook
+- no-op unless a hardcoded trigger phrase matches
+- log whether the hook fired
+
+That is the smallest safe proof that the plugin boundary is viable before semantic logic is added.
