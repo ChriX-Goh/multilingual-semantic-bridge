@@ -37,9 +37,19 @@ This is not the full benchmark harness. It is a compact runtime-focused matrix f
 
 ## Current status
 
-- T01-T05: directionally validated as trigger cases during local/runtime proof work
-- N01-N03: directionally validated as non-trigger cases
-- B01: previously over-triggered, now tuned to remain quiet
+- T01-T05: validated as trigger cases
+- N01-N03: validated as non-trigger cases
+- B01: previously over-triggered, now tuned to remain quiet and validated as non-trigger
+
+## Latest validation result (2026-04-17)
+
+A first compact matrix pass was run against the current plugin logic with the configured test trigger set to `bridge-plugin-test`.
+
+Result: 9/9 cases passed.
+
+- Trigger cases passed: T01, T02, T03, T04, T05
+- Non-trigger cases passed: N01, N02, N03
+- Borderline case passed: B01
 
 ## Next use
 
