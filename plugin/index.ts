@@ -32,6 +32,7 @@ const ENGLISH_TECH_TERMS = [
   "ssh",
 ];
 const BRIDGE_INTENT_PATTERN = /怎么|為什麼|为什么|如何|怎樣|咋|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|命中|登入|登录|連接|连接|documentation|docs|hook|config|token|error|issue|setup|install|why|how/u;
+const CONCEPTUAL_COMPARISON_PATTERN = /区别|區別|区分|作用|是什么|什麼/u;
 
 type PluginConfig = {
   enabled?: boolean;
@@ -77,14 +78,20 @@ function decideBridgeActivation(prompt: string, config: PluginConfig): BridgeDec
   const mixed = hasMixedLanguage(trimmed);
   const nonAscii = hasNonAscii(trimmed);
   const bridgeIntent = BRIDGE_INTENT_PATTERN.test(trimmed);
+  const conceptualComparison = CONCEPTUAL_COMPARISON_PATTERN.test(trimmed);
 
-  if (mixed && techMatches > 0 && bridgeIntent) {
+  if (mixed && techMatches > 0 && bridgeIntent && !conceptualComparison) {
     reasons.push("mixed-language wording with English-heavy technical intent");
   }
-  if (cjk && techMatches >= 2 && bridgeIntent) {
+  if (cjk && techMatches >= 2 && bridgeIntent && !conceptualComparison) {
     reasons.push("CJK wording aimed at likely English technical target");
   }
-  if (nonAscii && /怎么|為什麼|为什么|如何|怎樣|咋|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|命中|登入|登录|連接|连接/u.test(trimmed) && techMatches > 0) {
+  if (
+    nonAscii &&
+    /怎么|為什麼|为什么|如何|怎樣|咋|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|命中|登入|登录|連接|连接/u.test(trimmed) &&
+    techMatches > 0 &&
+    !conceptualComparison
+  ) {
     reasons.push("non-English problem phrasing around a technical target");
   }
 

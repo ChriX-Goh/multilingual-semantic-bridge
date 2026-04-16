@@ -34,6 +34,16 @@ This is not the full benchmark harness. It is a compact runtime-focused matrix f
 | N02 | `今天天气怎么样` | No trigger | Non-technical everyday query |
 | N03 | `OpenClaw plugin docs for before_prompt_build hook` | No trigger | Pure English and already explicit |
 | B01 | `skill 和 memory 的区别是什么` | No trigger | Borderline conceptual comparison; should stay quiet after false-positive tuning |
+| B02 | `OpenClaw memory 和 skill 要怎么区分？` | No trigger | Mixed-language conceptual comparison; should not auto-bridge |
+| B03 | `这个 plugin 的作用是什么` | No trigger | Generic conceptual explanation request |
+| B04 | `我想找之前关于 openclaw plugin 的笔记` | No trigger | Retrieval-sounding, but currently too generic and should not auto-bridge yet |
+| B05 | `为什么 openclaw memory search 老是搜不到我之前写的中文记录` | Trigger | Clear multilingual retrieval failure around English-heavy technical target |
+| B06 | `如何在 OpenClaw 里设置 plugin 的 config key` | Trigger | Multilingual config task with technical anchors |
+| B02 | `OpenClaw memory 和 skill 要怎么区分？` | No trigger | Conceptual distinction question, not clearly retrieval/routing/problem-solving |
+| B03 | `这个 plugin 的作用是什么` | No trigger | Generic conceptual explanation request |
+| B04 | `我想找之前关于 openclaw plugin 的笔记` | No trigger | Retrieval-sounding, but currently too generic and should not auto-bridge yet |
+| B05 | `为什么 openclaw memory search 老是搜不到我之前写的中文记录` | Trigger | Clear multilingual retrieval failure around English-heavy technical target |
+| B06 | `如何在 OpenClaw 里设置 plugin 的 config key` | Trigger | Multilingual config task with technical anchors |
 
 ## Current status
 
@@ -50,6 +60,14 @@ Result: 9/9 cases passed.
 - Trigger cases passed: T01, T02, T03, T04, T05
 - Non-trigger cases passed: N01, N02, N03
 - Borderline case passed: B01
+
+A harder borderline expansion pass was then added.
+
+Result: 14/14 cases passed after tightening conceptual-comparison handling.
+
+- New non-trigger borderline cases passed: B02, B03, B04
+- New trigger borderline cases passed: B05, B06
+- Important tuning lesson: mixed-language conceptual comparison prompts can look superficially like bridge-worthy technical prompts, especially when they contain English anchors plus `怎么`. The plugin should suppress bridge activation for conceptual-comparison style prompts unless they are clearly problem/retrieval/config oriented.
 
 ## Next use
 
