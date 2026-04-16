@@ -85,10 +85,35 @@ The plugin adds:
 
 ## Immediate next coding step
 
-Read the exact current `before_prompt_build` hook contract and scaffold a plugin package that does nothing except:
+The original smallest-safe proof was to read the exact current `before_prompt_build` hook contract and scaffold a plugin package that does nothing except:
 - load cleanly
 - register the hook
 - no-op unless a hardcoded trigger phrase matches
 - log whether the hook fired
 
-That is the smallest safe proof that the plugin boundary is viable before semantic logic is added.
+That proof is now complete, and the current implementation has already moved beyond it into a narrow heuristic activation pass.
+
+## Confirmed runtime validation method (2026-04-17)
+
+For real runtime proof, use an isolated validation path instead of the active Control UI / main gateway path.
+
+Recommended method:
+- isolated profile
+- isolated gateway port
+- isolated copied plugin path when needed
+- direct gateway RPC with explicit target URL pinning
+- gateway-log inspection for hook execution evidence
+
+Evidence to look for:
+- `before_prompt_build` hook runner invocation
+- `multilingual bridge hook fired`
+- prompt-context mutation before model submission
+
+## Confirmed runtime result
+
+The plugin's `before_prompt_build` hook has now been confirmed to fire in a real runtime path.
+The handler executes and injects prompt context before model submission.
+
+## Validation lesson
+
+Do not rely on `openclaw agent` or status commands alone for isolated plugin-runtime proof unless the target gateway URL is explicitly pinned. Those commands can silently resolve against the active/default gateway and produce misleading evidence.
