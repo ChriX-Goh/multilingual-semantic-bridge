@@ -190,6 +190,9 @@ Create a post-v1 backlog document with clear buckets:
 - integration maturity
 - deeper architecture options
 
+Status:
+- completed via `docs/PLUGIN_POST_V1_BACKLOG.md`
+
 ### Slice 3
 Pick exactly one bounded post-v1 improvement and execute it end-to-end
 
@@ -208,8 +211,9 @@ Revisit packaging only if repo reality now demands it
 
 Do not go back into vague long discussion.
 The best next move is:
-- **finish Phase 1 release/publish surface stabilization**, then
-- **open the bounded post-v1 backlog as a separate decision surface**
+- Phase 1 release/publish surface stabilization is complete
+- the bounded post-v1 backlog now exists as `docs/PLUGIN_POST_V1_BACKLOG.md`
+- the next move is to choose one bounded post-v1 slice rather than reopening broad planning
 
 That gives the project both:
 - a stable signed-off resting point, and

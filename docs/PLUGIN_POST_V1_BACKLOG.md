@@ -108,6 +108,22 @@ Why this first:
 - it preserves the signed-off architecture
 - it avoids premature benchmark theater or deeper-system inflation
 
+## 3A. Completed first bounded slice
+
+Completed on 2026-04-17 UTC+8:
+- Bucket: Utility hardening
+- Question: should vague mixed-language usage/comparison prompts auto-trigger the bridge just because they contain technical anchors?
+- Expected evidence: one explicit suppression rule plus matrix expansion
+- Result: completed
+
+What changed:
+- mixed-language prompts such as `repo 點樣 sync 比較好`, `skill 點樣用先最好`, `plugin 同 memory search 點樣配合`, and `plugin sdk 同 hook 差別係咩` are now explicitly expected to stay quiet
+- compact validator now passes 30/30 after adding this post-v1 hardening family
+
+Recommended next pick after this:
+- stay in Bucket A
+- choose either one hard false-negative family or one compactness/noise-trimming slice
+
 ## 4. What should not be picked next by default
 
 Do not pick these first unless a stronger reason appears:

@@ -19,11 +19,12 @@
 - RC-tightening slice is complete, including a fresh isolated runtime spot-check and a compact RC checklist.
 
 ## Intended next step
-- protect the signed-off v1 baseline and choose one bounded post-v1 slice from the explicit backlog surface instead of drifting back into tactical fragments.
+- protect the signed-off v1 baseline and continue with bounded post-v1 slices instead of drifting back into tactical fragments.
 
 ## Post-v1 backlog anchor
 - The explicit post-v1 backlog surface is now `docs/PLUGIN_POST_V1_BACKLOG.md`.
-- Recommended next bounded pick: Bucket A (utility hardening), starting with one evidence-backed correction on a hard mixed-language edge family.
+- First bounded post-v1 slice is complete: Bucket A (utility hardening) suppressed a vague mixed-language usage/comparison false-positive family and expanded the compact matrix to 30/30 passing cases.
+- Recommended next bounded pick: continue Bucket A with either one hard false-negative family or one compactness/noise-trimming slice.
 
 ## Long-horizon execution anchor
 - Long-range execution is now governed by `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`.
