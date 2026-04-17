@@ -6,6 +6,7 @@
 export const DEFAULT_TEST_TRIGGER = "bridge-plugin-test";
 export const ENGLISH_TECH_TERMS = [
   "openclaw",
+  "oc",
   "plugin",
   "plugins",
   "skill",
@@ -13,6 +14,7 @@ export const ENGLISH_TECH_TERMS = [
   "memory",
   "vector",
   "github",
+  "gh",
   "git",
   "repo",
   "runbook",
@@ -36,12 +38,14 @@ export const ENGLISH_TECH_TERMS = [
   "gateway",
   "docker",
   "codex",
+  "cc",
   "gemini",
   "vaultwarden",
+  "vw",
   "ssh",
 ];
 
-export const BRIDGE_INTENT_PATTERN = /怎么|為什麼|为什么|如何|怎樣|点样|點樣|咋|點解|点解|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|搜不到|搜唔到|搵唔到|命中|唔中|不中|喺邊度|邊度|在哪里|在哪裡|登入|登录|連接|连接|documentation|docs|hook|config|token|error|issue|setup|install|why|how/u;
+export const BRIDGE_INTENT_PATTERN = /怎么|為什麼|为什么|如何|怎樣|点样|點樣|點搞|点搞|咋|點解|点解|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|搜不到|搜唔到|搵唔到|命中|唔中|不中|喺邊度|邊度|在哪里|在哪裡|登入|登录|連接|连接|documentation|docs|hook|config|token|error|issue|setup|install|why|how/u;
 export const CONCEPTUAL_COMPARISON_PATTERN = /区别|區別|区分|作用|是什么|什麼|差別|差别|比較|比较|配合|運作|运作|原理|分工/u;
 export const VAGUE_USAGE_PATTERN = /點樣用|点样用|怎樣用|怎么用|如何用|點樣先最好|怎么才好|比較好|比较好|整理一下/u;
 
@@ -81,7 +85,7 @@ export function hasMixedLanguage(prompt: string): boolean {
 export function classifyIntent(prompt: string): BridgeIntent {
   const lower = prompt.toLowerCase();
   const hasTroubleshootingSignal = /報錯|报错|失敗|失败|錯誤|错误|為什麼|为什么|點解|点解|找不到|找唔到|搵唔到|排查/u.test(prompt) || /error|errors|issue|issues|broken|fail|failing|cannot find|not found|troubleshoot|debug/.test(lower);
-  const hasConfigSignal = /設定|设置|配置|安裝|安装|裝|點樣裝|点樣裝|點樣設置|点样设置|點樣設|点样设|喺邊度設|在哪裡設|在哪里设|config key|plugin key|oauth|api key/u.test(prompt) || /config|setup|install/.test(lower);
+  const hasConfigSignal = /設定|设置|配置|安裝|安装|裝|點樣裝|点樣裝|點樣設置|点样设置|點樣設|点样设|點樣配|点样配|配畀|喺邊度設|在哪裡設|在哪里设|config key|plugin key|oauth|api key/u.test(prompt) || /config|setup|install/.test(lower);
   const hasRetrievalSignal = /搜不到|搜唔到|搵唔到|命中|回忆|回想|以前写的|之前写的|筆記|笔记|記低|記錄|记录/u.test(prompt) || /memory search|memory_search|retrieve|recall|search|notes|note|runbook/.test(lower);
   const hasHistoryAnchor = /以前写的|之前写的|中文记录|中文紀錄|筆記|笔记|note|notes|runbook|記低|記錄|记录/u.test(prompt) || /note|notes|runbook/.test(lower);
   const asksToLocateHistory = /喺邊度|在哪里|在哪裡|翻返|搵返|睇邊邊先|先搵/u.test(prompt) || /where|find|look up/.test(lower);
@@ -169,7 +173,7 @@ export function decideBridgeActivation(prompt: string, config: PluginConfig): Br
   const vagueUsage = VAGUE_USAGE_PATTERN.test(trimmed);
   const suppressMixedGuidance = conceptualComparison || vagueUsage;
 
-  const organizationOnly = /整理一下|整理下|整理|归纳|歸納/u.test(trimmed) && !bridgeIntent;
+  const organizationOnly = /整理一下|整理下|整理返|整理|归纳|歸納/u.test(trimmed);
 
   if (mixed && techMatches > 0 && bridgeIntent && !suppressMixedGuidance && !organizationOnly) {
     reasons.push("mixed-language wording with English-heavy technical intent");

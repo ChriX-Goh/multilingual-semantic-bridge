@@ -28,7 +28,8 @@
 - Third bounded post-v1 slice is complete: Bucket A trimmed repeated bridge-context boilerplate while preserving class guidance, with validator stability preserved at 32/32.
 - Fourth bounded post-v1 slice is complete: Bucket A refined retrieval-vs-troubleshooting class fit on ambiguous history-vs-current-issue prompts, with validator stability now preserved at 36/36.
 - Fifth bounded post-v1 slice is complete: a small English-light / weak-anchor pressure-test family exposed three real gaps, which were then tightened in a bounded way, with validator stability now preserved at 42/42.
-- Recommended next bounded pick: shift back to governance lane for README/install/public-story coherence and ClawHub-readiness review, unless a clearly new edge family appears.
+- Sixth bounded post-v1 slice is complete: an alias-heavy / shorthand-heavy pressure-test family exposed three additional real gaps, which were then tightened in a bounded way, with validator stability now preserved at 48/48.
+- Recommended next bounded pick: do not open another product family by default; use the explicit product stop-or-continue judgment first.
 
 ## Long-horizon execution anchor
 - Long-range execution is now governed by `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`.
@@ -44,9 +45,11 @@
 - The release gate now exists at `docs/PUBLIC_RELEASE_GATE_CHECKLIST_2026-04-18.md` and has advanced to current recommendation `GO-CANDIDATE`.
 - G3 contradiction/classification cleanup has now been materially advanced and a final contradiction check is recorded in `docs/FINAL_CONTRADICTION_CHECK_2026-04-18.md`.
 - M2 small weak-anchor pressure-test family is complete, with validator now preserved at 42/42.
+- A further alias-heavy / shorthand-heavy pressure-test family is complete, with validator now preserved at 48/48.
 - Final visibility recommendation now exists at `docs/FINAL_VISIBILITY_RECOMMENDATION_2026-04-18.md`.
 - Explicit first ClawHub publication-unit decision now exists at `docs/CLAWHUB_PUBLICATION_UNIT_DECISION_2026-04-18.md`.
 - Tranche-end re-judgment is recorded at `docs/RELEASE_GATE_REJUDGMENT_2026-04-18.md`.
-- Immediate next move is no longer foundational cleanup; it is final pre-execution verification before any outward action.
-- Pre-execution verification is now defined at `docs/PRE_EXECUTION_VERIFICATION_CHECKLIST_2026-04-18.md`.
-- Skill-facing publication copy/metadata draft is now staged at `docs/SKILL_PUBLICATION_METADATA_DRAFT_2026-04-18.md`.
+- Product-vs-release boundary is now made explicit at `docs/PRODUCT_VS_RELEASE_BOUNDARY_2026-04-18.md`.
+- Product stop-or-continue judgment is now recorded at `docs/PRODUCT_STOP_OR_CONTINUE_JUDGMENT_2026-04-18.md`.
+- Current judgment: freeze product expansion here for now and treat the mainline as strong enough for release execution.
+- Pre-execution verification remains staged at `docs/PRE_EXECUTION_VERIFICATION_CHECKLIST_2026-04-18.md`, and outward execution should now use that package rather than reopening product refinement by default.

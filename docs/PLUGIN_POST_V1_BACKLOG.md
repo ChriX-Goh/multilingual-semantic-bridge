@@ -200,6 +200,27 @@ Recommended next pick after this:
 - return to governance lane for README/install/public-story coherence and ClawHub-readiness review
 - only add another product refinement if a later pressure-test family reveals a genuinely new edge class
 
+## 4C. Completed alias-heavy / shorthand-heavy pressure-test family
+
+Completed on 2026-04-18 UTC+8:
+- Bucket: Broader coverage pressure test
+- Question: how does the plugin behave on alias-heavy or shorthand-heavy technical prompts with weaker official token overlap?
+- Expected evidence: one named pressure-test family plus an honest pass/fail result
+- Result: completed
+
+Pressure-test family:
+- alias-heavy / shorthand-heavy multilingual technical prompts
+
+What changed:
+- added six alias/shorthand pressure-test cases using forms like `OC`, `gh`, `VW`, and `CC`
+- surfaced three real gaps on the first pass
+- tightened alias-aware technical-anchor recognition, config wording recognition, and retrieval activation for shorthand history-lookup prompts
+- compact validator now passes 48/48
+
+Recommended next pick after this:
+- do not open another product family by default
+- move to an explicit product stop-or-continue judgment before any further hardening
+
 ## 4. What should not be picked next by default
 
 Do not pick these first unless a stronger reason appears:

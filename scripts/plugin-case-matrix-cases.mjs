@@ -45,5 +45,11 @@ export const cases = [
   { id: 'PT03', prompt: 'before_prompt_build 官方 docs 我想睇入口', expected: true, style: 'upstream_reference' },
   { id: 'PT04', prompt: 'plugin token 又錯咗，想睇下 error log 應該點查', expected: true, style: 'symptom_diagnosis' },
   { id: 'PT05', prompt: 'OpenClaw 個 plugin 同 skill 點分工先最好', expected: false, style: null },
-  { id: 'PT06', prompt: 'docs 同 note 我想整理一下', expected: false, style: null }
+  { id: 'PT06', prompt: 'docs 同 note 我想整理一下', expected: false, style: null },
+  { id: 'AL01', prompt: 'OC 個 hook docs 入口喺邊？', expected: true, style: 'upstream_reference' },
+  { id: 'AL02', prompt: '個 repo note 我想翻返，之前記過 gh sync 點搞', expected: true, style: 'history_recall' },
+  { id: 'AL03', prompt: 'VW token 點樣配畀 OC plugin？', expected: true, style: 'setup_mapping' },
+  { id: 'AL04', prompt: 'CC 喺 OC plugin 入面又 token error', expected: true, style: 'symptom_diagnosis' },
+  { id: 'AL05', prompt: 'OC 同 gh 點樣配合先最好', expected: false, style: null },
+  { id: 'AL06', prompt: 'VW 同 token 我想整理返啲 note', expected: false, style: null }
 ];
