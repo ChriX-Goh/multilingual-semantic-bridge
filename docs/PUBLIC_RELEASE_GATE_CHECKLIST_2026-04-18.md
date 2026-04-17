@@ -31,12 +31,12 @@ Reason:
 - [x] first-pass repo hygiene scan exists
 - [x] local validation evidence has begun to be relabeled
 - [x] default-vs-local classification surface exists
-- [ ] all public-facing docs consistently follow the classification model
+- [x] the main public-facing docs now follow the classification model materially better than before
 - [ ] no remaining one-machine validation details are presented like universal defaults
 - [ ] public docs are free of author-local/operator-specific configuration unless explicitly scoped
 
 Current note:
-- progress is real, but the hygiene pass is not complete enough yet to call the repo public-ready
+- hygiene is materially improved, but not yet strong enough to call the repo public-ready
 
 ### B. Public story coherence
 - [x] public description exists
@@ -44,10 +44,10 @@ Current note:
 - [x] README reflects the core project shape
 - [x] README, public description, proof summary, and status now share the same narrow-v1 package framing
 - [x] one dedicated contradiction-cleanup pass has already been completed across release-facing docs
-- [ ] no major contradiction remains between release-facing docs and current status
+- [x] no major contradiction remains between release-facing docs and current status
 
 Current note:
-- coherence is materially better; one final contradiction check is still warranted before moving the gate further
+- coherence is now good enough that remaining blockers lie elsewhere
 
 ### C. Product readiness and evidence
 - [x] narrow v1 signoff exists
@@ -90,10 +90,10 @@ Current note:
 ## 4. Smallest remaining gap list
 
 To move from NOT YET GO toward GO-CANDIDATE, complete these first:
-1. finish the remaining public-doc classification cleanup pass
-2. complete one final contradiction check across release-facing docs and status
-3. tighten the final visibility-change recommendation
-4. confirm the chosen ClawHub publication unit and any metadata gaps
+1. tighten the final visibility-change recommendation
+2. confirm the chosen ClawHub publication unit and any metadata gaps
+3. finish the last meaningful hygiene checks on any remaining public-facing surfaces
+4. decide whether minor wording-polish items are accepted as non-blocking or should be cleaned first
 
 ## 5. Next recommended slice
 

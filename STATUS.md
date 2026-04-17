@@ -42,5 +42,6 @@
 - Longer-batch planning is now governed by `docs/LONGER_TRANCHE_EXECUTION_PLAN_2026-04-18.md`.
 - Classification authority now exists at `docs/DEFAULT_VS_LOCAL_CLASSIFICATION_2026-04-18.md` and should govern future public-facing wording.
 - First release-gate draft now exists at `docs/PUBLIC_RELEASE_GATE_CHECKLIST_2026-04-18.md` with current recommendation `NOT YET GO`.
-- Immediate tranche move: G3 remaining contradiction/classification cleanup.
-- Immediate after that: M2 one small pressure-test family rather than broad benchmark expansion.
+- G3 contradiction/classification cleanup has now been materially advanced and a final contradiction check is recorded in `docs/FINAL_CONTRADICTION_CHECK_2026-04-18.md`.
+- M2 small weak-anchor pressure-test family is complete, with validator now preserved at 42/42.
+- Immediate tranche move: continue governance lane with the final visibility-change recommendation and explicit ClawHub publication-unit decision.
