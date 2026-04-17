@@ -31,7 +31,8 @@ export const ENGLISH_TECH_TERMS = [
 ];
 
 export const BRIDGE_INTENT_PATTERN = /怎么|為什麼|为什么|如何|怎樣|点样|點樣|咋|點解|点解|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|搜不到|搜唔到|搵唔到|命中|登入|登录|連接|连接|documentation|docs|hook|config|token|error|issue|setup|install|why|how/u;
-export const CONCEPTUAL_COMPARISON_PATTERN = /区别|區別|区分|作用|是什么|什麼/u;
+export const CONCEPTUAL_COMPARISON_PATTERN = /区别|區別|区分|作用|是什么|什麼|差別|差别|比較|比较|配合|運作|运作|原理/u;
+export const VAGUE_USAGE_PATTERN = /點樣用|点样用|怎樣用|怎么用|如何用|點樣先最好|怎么才好|比較好|比较好/u;
 
 export type PluginConfig = {
   enabled?: boolean;
@@ -155,14 +156,16 @@ export function decideBridgeActivation(prompt: string, config: PluginConfig): Br
   const nonAscii = hasNonAscii(trimmed);
   const bridgeIntent = BRIDGE_INTENT_PATTERN.test(trimmed);
   const conceptualComparison = CONCEPTUAL_COMPARISON_PATTERN.test(trimmed);
+  const vagueUsage = VAGUE_USAGE_PATTERN.test(trimmed);
+  const suppressMixedGuidance = conceptualComparison || vagueUsage;
 
-  if (mixed && techMatches > 0 && bridgeIntent && !conceptualComparison) {
+  if (mixed && techMatches > 0 && bridgeIntent && !suppressMixedGuidance) {
     reasons.push("mixed-language wording with English-heavy technical intent");
   }
-  if (cjk && techMatches >= 2 && bridgeIntent && !conceptualComparison) {
+  if (cjk && techMatches >= 2 && bridgeIntent && !suppressMixedGuidance) {
     reasons.push("CJK wording aimed at likely English technical target");
   }
-  if (nonAscii && /怎么|為什麼|为什么|如何|怎樣|點樣|点样|咋|點解|点解|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|搜不到|搜唔到|搵唔到|命中|登入|登录|連接|连接/u.test(trimmed) && techMatches > 0 && !conceptualComparison) {
+  if (nonAscii && /怎么|為什麼|为什么|如何|怎樣|點樣|点样|咋|點解|点解|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|搜不到|搜唔到|搵唔到|命中|登入|登录|連接|连接/u.test(trimmed) && techMatches > 0 && !suppressMixedGuidance) {
     reasons.push("non-English problem phrasing around a technical target");
   }
 

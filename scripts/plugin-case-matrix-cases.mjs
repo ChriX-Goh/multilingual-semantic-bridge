@@ -24,5 +24,9 @@ export const cases = [
   { id: 'M09', prompt: '請問 docker 入面點樣裝 openclaw plugin sdk？', expected: true, style: 'setup_mapping' },
   { id: 'M10', prompt: 'OpenClaw hook documentation 我想睇官方 reference', expected: true, style: 'upstream_reference' },
   { id: 'M11', prompt: '之前個 Codex token error runbook 喺邊度？', expected: true, style: 'history_recall' },
-  { id: 'M12', prompt: 'GitHub workflow 同 repo 有什么区别', expected: false, style: null }
+  { id: 'M12', prompt: 'GitHub workflow 同 repo 有什么区别', expected: false, style: null },
+  { id: 'P01', prompt: 'OpenClaw repo 點樣 sync 比較好？', expected: false, style: null },
+  { id: 'P02', prompt: 'OpenClaw skill 點樣用先最好？', expected: false, style: null },
+  { id: 'P03', prompt: 'OpenClaw plugin 同 memory search 點樣配合？', expected: false, style: null },
+  { id: 'P04', prompt: '請問 OpenClaw plugin sdk 同 hook 差別係咩？', expected: false, style: null }
 ];
