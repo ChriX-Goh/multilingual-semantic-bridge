@@ -159,6 +159,26 @@ Recommended next pick after this:
 - stay in Bucket A
 - next best choice is a narrower retrieval-vs-troubleshooting class-fit refinement on ambiguous edge prompts
 
+## 4A. Completed retrieval-vs-troubleshooting class-fit slice
+
+Completed on 2026-04-18 UTC+8:
+- Bucket: Utility hardening
+- Question: on ambiguous prompts that mix prior notes/runbooks with a current issue, does the plugin still lean the wrong way between `history_recall`, `setup_mapping`, and `symptom_diagnosis`?
+- Expected evidence: explicit edge cases plus one justified refinement if needed
+- Result: completed
+
+What changed:
+- added four ambiguous A4 edge cases covering history-vs-current-troubleshooting and history-vs-current-config overlap
+- tightened `classifyIntent` so it now distinguishes:
+  - locating prior notes/runbooks as retrieval-first
+  - current config-check intent as setup-first
+  - explicit present-tense troubleshooting as diagnosis-first
+- compact validator now passes 36/36
+
+Recommended next pick after this:
+- stay in Bucket A or move lightly into Bucket B
+- best next choices are either one more bounded false-positive/class-fit refinement if a real edge family appears, or one small pressure-test family rather than broad benchmark expansion
+
 ## 4. What should not be picked next by default
 
 Do not pick these first unless a stronger reason appears:

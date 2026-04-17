@@ -26,7 +26,8 @@
 - First bounded post-v1 slice is complete: Bucket A (utility hardening) suppressed a vague mixed-language usage/comparison false-positive family and expanded the compact matrix to 30/30 passing cases.
 - Second bounded post-v1 slice is complete: Bucket A widened English-light technical-anchor coverage for artifact lookup/troubleshooting prompts and expanded the compact matrix to 32/32 passing cases.
 - Third bounded post-v1 slice is complete: Bucket A trimmed repeated bridge-context boilerplate while preserving class guidance, with validator stability preserved at 32/32.
-- Recommended next bounded pick: continue Bucket A with one retrieval-vs-troubleshooting class-fit refinement on ambiguous edge prompts.
+- Fourth bounded post-v1 slice is complete: Bucket A refined retrieval-vs-troubleshooting class fit on ambiguous history-vs-current-issue prompts, with validator stability now preserved at 36/36.
+- Recommended next bounded pick: either one more narrow class-fit/false-positive refinement if a real edge family appears, or one small pressure-test family without broad benchmark inflation.
 
 ## Long-horizon execution anchor
 - Long-range execution is now governed by `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`.

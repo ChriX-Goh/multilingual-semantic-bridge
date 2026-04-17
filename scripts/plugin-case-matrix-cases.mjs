@@ -35,5 +35,9 @@ export const cases = [
   { id: 'P03', prompt: 'OpenClaw plugin 同 memory search 點樣配合？', expected: false, style: null },
   { id: 'P04', prompt: '請問 OpenClaw plugin sdk 同 hook 差別係咩？', expected: false, style: null },
   { id: 'Q01', prompt: '之前個 login error 筆記喺邊度？', expected: true, style: 'history_recall' },
-  { id: 'Q02', prompt: '我想睇 error log', expected: true, style: 'symptom_diagnosis' }
+  { id: 'Q02', prompt: '我想睇 error log', expected: true, style: 'symptom_diagnosis' },
+  { id: 'A401', prompt: '之前寫過個 token error runbook，而家又報同樣問題，應該睇邊邊先？', expected: true, style: 'history_recall' },
+  { id: 'A402', prompt: '之前個 github repo 找不到筆記我想翻返，但而家 repo 又喺 openclaw 入面搵唔到', expected: true, style: 'history_recall' },
+  { id: 'A403', prompt: '之前記低咗 plugin config key 點設，但而家設定又失敗，先搵筆記定先查 config？', expected: true, style: 'setup_mapping' },
+  { id: 'A404', prompt: '我之前寫過 login error note，但而家只想排查點解仲係 login error', expected: true, style: 'symptom_diagnosis' }
 ];
