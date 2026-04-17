@@ -14,5 +14,9 @@
 ## Current tracked continuity item
 - GitHub issue restored: `#2` — `Track phase-2 pluginization readiness and packaging boundary`
 
+## Current readiness judgment
+- Current judgment: **v1 candidate**, not final v1-ready signoff yet.
+- Main remaining recommended tightening slice: run one fresh post-tightening isolated runtime spot-check and write a compact RC/release-readiness checklist.
+
 ## Intended next step
-- re-read the v1-ready gate as a whole and decide whether the next move is release-readiness tightening, sub-issue splitting, or one more focused validation slice before calling the package boundary stable enough for publication judgment.
+- do one focused RC-tightening slice rather than opening a new broad capability branch.

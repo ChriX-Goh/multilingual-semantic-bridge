@@ -41,8 +41,8 @@ Definition:
 - each proof records pinned gateway target, sample prompt, and gateway evidence
 
 Current state:
-- partially complete
-- retrieval/history proof exists on pinned isolated gateway
+- complete enough for v1 candidate readiness
+- strong isolated proofs now exist for retrieval/history recall, config/setup, troubleshooting/symptom diagnosis, and docs/upstream reference
 
 ### M3. Coverage expansion
 Definition:
@@ -86,7 +86,7 @@ Definition:
 
 Current state:
 - GitHub continuity repaired
-- tracked work item restoration is now the immediate action
+- tracked work item restored via issue `#2`
 - current recommended package-boundary decision for v1: keep the plugin as a sibling package inside this dedicated repo, not a split repo/package yet
 
 ## 4. Work breakdown
