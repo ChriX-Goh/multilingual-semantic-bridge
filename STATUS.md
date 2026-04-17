@@ -53,3 +53,5 @@
 - Product stop-or-continue judgment is now recorded at `docs/PRODUCT_STOP_OR_CONTINUE_JUDGMENT_2026-04-18.md`.
 - Current judgment: freeze product expansion here for now and treat the mainline as strong enough for release execution.
 - Pre-execution verification remains staged at `docs/PRE_EXECUTION_VERIFICATION_CHECKLIST_2026-04-18.md`, and outward execution should now use that package rather than reopening product refinement by default.
+- Outward execution has now begun successfully: the GitHub repo is public and the first staged ClawHub publication exists. Verification and follow-up are recorded in `docs/POST_PUBLICATION_VERIFICATION_2026-04-18.md`.
+- Highest-priority follow-up from outward execution: ClawHub currently reports license `MIT-0`, which appears inconsistent with the intended Apache-2.0 project licensing baseline and should be corrected deliberately.
