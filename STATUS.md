@@ -36,4 +36,6 @@
 - Public release is now governed by `docs/PUBLIC_RELEASE_GOVERNANCE_PLAN_2026-04-18.md`.
 - First-pass hygiene scan is now recorded in `docs/REPO_HYGIENE_SCAN_2026-04-18.md`.
 - Current hygiene judgment: attribution surfaces look normal, but several public docs still contain local validation endpoints/profile names that should be relabeled or separated before any public release.
-- Immediate next governance move: classify and rewrite local validation references so public usage guidance and one-machine validation evidence are not mixed together.
+- Sustained execution cadence is now explicitly governed by `docs/SUSTAINED_EXECUTION_CADENCE_2026-04-18.md`.
+- Immediate governance move: complete the default-vs-local classification pass so public usage guidance and one-machine validation evidence are not mixed together.
+- Immediate product move: continue with retrieval-vs-troubleshooting class-fit refinement as the next bounded hardening slice.
