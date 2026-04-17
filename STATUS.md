@@ -1,7 +1,7 @@
 # STATUS
 
-- Whole-project progress: ~94%
-- Current mainline phase: phase-2 pluginization through M6 packaging/continuity readiness
+- Whole-project progress: ~97%
+- Current mainline phase: signed-off narrow v1 baseline, with release/publish stabilization complete and post-v1 backlog opening
 - GitHub continuity status: repaired
 
 ## Stable conclusions
@@ -19,7 +19,11 @@
 - RC-tightening slice is complete, including a fresh isolated runtime spot-check and a compact RC checklist.
 
 ## Intended next step
-- protect the signed-off v1 baseline, finish release/publish surface stabilization, then open a bounded post-v1 backlog instead of continuing as short tactical fragments.
+- protect the signed-off v1 baseline and choose one bounded post-v1 slice from the explicit backlog surface instead of drifting back into tactical fragments.
+
+## Post-v1 backlog anchor
+- The explicit post-v1 backlog surface is now `docs/PLUGIN_POST_V1_BACKLOG.md`.
+- Recommended next bounded pick: Bucket A (utility hardening), starting with one evidence-backed correction on a hard mixed-language edge family.
 
 ## Long-horizon execution anchor
 - Long-range execution is now governed by `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`.
