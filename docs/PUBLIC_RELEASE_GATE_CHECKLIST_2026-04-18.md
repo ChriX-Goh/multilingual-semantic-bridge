@@ -43,10 +43,11 @@ Current note:
 - [x] usage/boundaries doc exists
 - [x] README reflects the core project shape
 - [x] README, public description, proof summary, and status now share the same narrow-v1 package framing
+- [x] one dedicated contradiction-cleanup pass has already been completed across release-facing docs
 - [ ] no major contradiction remains between release-facing docs and current status
 
 Current note:
-- framing coherence improved, but one more contradiction check is still warranted
+- coherence is materially better; one final contradiction check is still warranted before moving the gate further
 
 ### C. Product readiness and evidence
 - [x] narrow v1 signoff exists
@@ -72,12 +73,12 @@ Current note:
 ### E. Packaging and publication mechanics
 - [x] dedicated repo boundary exists
 - [x] current package/repo decision is explicit
-- [ ] ClawHub-readiness review completed
-- [ ] explicit public-release execution order written in release-ready form
+- [x] first ClawHub-readiness review completed
+- [x] draft public-release execution order written
 - [ ] final visibility-change recommendation written
 
 Current note:
-- packaging boundary is stable enough, but publication mechanics are not yet fully staged
+- publication mechanics are now staged in draft form, but the final recommendation remains blocked on the gate
 
 ### F. External-action control
 - [x] external actions are explicitly gated by policy
@@ -89,10 +90,10 @@ Current note:
 ## 4. Smallest remaining gap list
 
 To move from NOT YET GO toward GO-CANDIDATE, complete these first:
-1. finish the public-doc classification cleanup pass
-2. run one README/public-description/proof-summary coherence pass
-3. complete a ClawHub-readiness review
-4. write the execution-order checkpoint for repo public -> ClawHub -> outreach
+1. finish the remaining public-doc classification cleanup pass
+2. complete one final contradiction check across release-facing docs and status
+3. tighten the final visibility-change recommendation
+4. confirm the chosen ClawHub publication unit and any metadata gaps
 
 ## 5. Next recommended slice
 
