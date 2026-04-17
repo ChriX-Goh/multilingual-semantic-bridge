@@ -69,17 +69,25 @@ function hasMixedLanguage(prompt: string): boolean {
 
 function classifyIntent(prompt: string): BridgeIntent {
   const lower = prompt.toLowerCase();
-  if (/找不到|找唔到|搜不到|搜唔到|命中|回忆|回想|以前写的|之前写的|笔记|筆記/u.test(prompt) || /memory search|memory_search|retrieve|recall|search|notes|note/.test(lower)) {
+  const hasTroubleshootingSignal = /報錯|报错|失敗|失败|錯誤|错误|為什麼|为什么|找不到|找唔到/u.test(prompt) || /error|errors|issue|issues|broken|fail|failing|cannot find|not found/.test(lower);
+  const hasConfigSignal = /設定|设置|配置|config key|oauth|api key|login|登入|登录/u.test(prompt) || /config|setup|install/.test(lower);
+  const hasRetrievalSignal = /搜不到|搜唔到|命中|回忆|回想|以前写的|之前写的|笔记|筆記/u.test(prompt) || /memory search|memory_search|retrieve|recall|search|notes|note/.test(lower);
+  const retrievalFailureAroundHistory = hasRetrievalSignal && (/以前写的|之前写的|中文记录|中文紀錄|笔记|筆記/u.test(prompt) || /memory search|memory_search/.test(lower));
+
+  if (retrievalFailureAroundHistory) {
     return "retrieval";
   }
-  if (/設定|设置|配置|config key|token|oauth|api key|login|登入|登录/u.test(prompt) || /config|setup|install/.test(lower)) {
+  if (hasTroubleshootingSignal) {
+    return "troubleshooting";
+  }
+  if (hasConfigSignal) {
     return "config";
+  }
+  if (hasRetrievalSignal) {
+    return "retrieval";
   }
   if (/docs|documentation|official docs|hook|manifest|sdk|entrypoint|api reference/.test(lower)) {
     return "docs";
-  }
-  if (/報錯|报错|失敗|失败|錯誤|错误|為什麼|为什么/u.test(prompt) || /error|issue|broken|fail|failing/.test(lower)) {
-    return "troubleshooting";
   }
   return "generic";
 }

@@ -78,6 +78,11 @@ Current intended mapping is:
 Immediate validation question after this checkpoint:
 - when a case triggers, does the selected context style match the real prompt class well enough to help rather than just add noise?
 
+Latest local style-mapping check:
+- 2026-04-17 local validation pass: 14/14 cases passed for both trigger behavior and expected context-style selection
+- one real misclassification pass was required before reaching 14/14: simple intent ordering initially misrouted some prompts toward retrieval/config too early
+- current tightened rule: troubleshooting wins over generic retrieval/config when the prompt is fundamentally an error/symptom report, but explicit retrieval-failure-around-history cases still map to `history_recall`
+
 ## Next use
 
 Use this matrix as the first compact check surface before expanding into a broader multilingual prompt set or full benchmark integration.
