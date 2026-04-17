@@ -129,6 +129,11 @@ Work items:
 - create tracked work items once GitHub path is healthy
 - decide whether/when this becomes publishable outside the current workspace
 
+Current checkpoint:
+- GitHub continuity has now been repaired
+- for v1, the recommended package boundary is to keep the plugin as a sibling package inside this dedicated repo rather than split it into a separate repo/package now
+- reason: plugin, skill, validation, and boundary docs are still changing in lockstep, so an early split would add overhead before the boundary is truly stable
+
 Exit criteria:
 - packaging decision made
 - GitHub tracking restored

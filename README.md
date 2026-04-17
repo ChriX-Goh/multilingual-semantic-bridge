@@ -34,6 +34,8 @@ This skill helps connect those two worlds without collapsing the workflow into a
 ## Included in this repo
 
 - `skills/multilingual-semantic-bridge/` — live skill source
+- `plugin/` — phase-2 pluginization package
+- `scripts/` — compact validator/support scripts for plugin decision-layer checks
 - `dist/multilingual-semantic-bridge.skill` — packaged artifact snapshot
 - `docs/RELEASE_NOTE.md` — first stable release note
 - `docs/USAGE_AND_BOUNDARIES.md` — where the skill helps and where it does not
@@ -42,9 +44,11 @@ This skill helps connect those two worlds without collapsing the workflow into a
 
 ## Current project status
 
-- Whole-project progress: ~90%
-- Current completed mainline phase: 100%
+- Whole-project progress: ~94%
+- Current mainline: phase-2 pluginization through M6 packaging/continuity readiness
 - Stable current conclusion: the bridge already improves retrieval/routing quality, but current builtin-memory evidence is best described as **memory-mediated target concentration** rather than a blanket claim of direct artifact retrieval in every surface.
+- Pluginization status: multi-class runtime proof baseline exists, broader curated coverage exists, operator controls/validation workflow are documented, and the plugin-skill cooperation contract is explicit.
+- GitHub continuity is repaired and tracked again via issue `#2`.
 
 ## Scope boundary
 
@@ -71,4 +75,8 @@ Choose the retrieval surface by target class:
 
 ## Packaging note
 
-This repo is currently arranged as a clean GitHub/project boundary for the skill and its minimal public support surfaces. It is not yet a full automated publication pipeline.
+This repo is currently arranged as a clean GitHub/project boundary for the skill, the phase-2 plugin package, and the shared validation/boundary docs that still evolve together.
+
+Current v1 decision:
+- keep the plugin as a sibling package inside this repo for now
+- do not split into a separate repo/package until the packaging boundary is more stable and less coupled to the shared bridge method/docs

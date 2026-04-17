@@ -86,8 +86,8 @@ Definition:
 
 Current state:
 - GitHub continuity repaired
-- tracked work items still not restored yet
-- package-boundary decision still pending
+- tracked work item restoration is now the immediate action
+- current recommended package-boundary decision for v1: keep the plugin as a sibling package inside this dedicated repo, not a split repo/package yet
 
 ## 4. Work breakdown
 
@@ -113,6 +113,7 @@ Current state:
 ### Stream E. Repo/GitHub continuity
 - re-verify auth and remote visibility
 - restore issue-based continuity once remote is healthy
+- keep the v1 plugin in this dedicated repo as a sibling package unless later evidence justifies a split
 - postpone external publication until continuity is real
 
 ## 5. Critical path
@@ -133,8 +134,8 @@ A plugin that only looks good on a local matrix is still too fragile to call v1-
 | Isolated gateway recipe | Needed for safe live proof without disturbing the active session | working but still rough |
 | OAuth-compatible isolated model config | Needed so proof runs do not fail on auth mismatch | working after switching to `openai-codex/gpt-5.4` |
 | Stable plugin discovery path | Needed for repeatable isolated validation | working via `plugins.load.paths` |
-| GitHub repo continuity | Needed for tracked work items and longer-term release discipline | blocked |
-| Plugin-skill boundary docs | Needed to prevent silent architectural drift | partial |
+| GitHub repo continuity | Needed for tracked work items and longer-term release discipline | repaired |
+| Plugin-skill boundary docs | Needed to prevent silent architectural drift | explicit contract now exists |
 
 ## 7. Main risks and buffers
 
