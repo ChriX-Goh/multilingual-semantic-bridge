@@ -59,8 +59,10 @@ Current checkpoint:
   - retrieval / history recall via `bridgeproof-runtime-v1`
   - config / setup via `bridgeproof-config-v1`
   - troubleshooting / symptom diagnosis via `bridgeproof-troubleshooting-v2`
+  - docs / upstream reference via `bridgeproof-docs-v1`
 - strongest gateway evidence still includes `before_prompt_build`, `multilingual bridge hook fired`, and prompt mutation via `prependSystemContext/appendSystemContext` before model submission
-- next validation focus is no longer "get one more clean troubleshooting proof". It shifts to tightening compactness/prompt-class fit and then deciding whether the next strong proof should be docs/reference before broader coverage expansion
+- docs/reference turned out to be worth proving because it demonstrated a distinct downstream shape: official doc targeting and exact reference surfacing rather than retrieval, setup mapping, or troubleshooting guidance
+- next validation focus now shifts away from collecting more intent-class trophies and toward tightening compactness/prompt-class fit before broader coverage expansion
 
 Exit criteria:
 - prompt-context classes documented
@@ -159,7 +161,7 @@ Start Phase B now.
 
 Concrete next slice:
 - the compact runtime-proof table is now recorded in `docs/PLUGIN_CASE_MATRIX_V1.md`
-- decide whether docs/reference is worth adding as the next strong class if it reveals a meaningfully different prompt-time bridge value
+- docs/reference has now been proven as an additional strong class, so the next move is not more class collection by default
 - tighten any remaining compactness/noise issues before expanding multilingual coverage
 
 This remains the highest-value next move because it upgrades the plugin from "fires correctly" to "helps correctly."

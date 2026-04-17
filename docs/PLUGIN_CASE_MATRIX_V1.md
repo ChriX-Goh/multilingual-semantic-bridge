@@ -138,7 +138,24 @@ Observed gateway evidence:
 Interpretation:
 - this replaces the earlier weaker troubleshooting sample that had a gateway-close wrinkle
 - the troubleshooting class is now also backed by a clean pinned-gateway proof, not only by answer-shape inference
-- current strong live evidence now spans retrieval, config/setup, and troubleshooting-oriented prompt classes
+
+### Proof 4, docs / upstream reference
+Session:
+- `bridgeproof-docs-v1`
+
+Prompt:
+- `bridge-plugin-test OpenClaw plugin 的 before_prompt_build hook 官方 docs 在哪里看？`
+
+Observed gateway evidence:
+- `[plugins] [hooks] running before_prompt_build (1 handlers, sequential)`
+- `[plugins] multilingual bridge hook fired`
+- `[agent/embedded] hooks: applied prependSystemContext/appendSystemContext (691+0 chars)`
+- downstream run used local docs reads and returned exact official doc targets for plugin architecture and agent loop
+
+Interpretation:
+- this class does add distinct proof value because the downstream answer shape is not retrieval-history, config mapping, or symptom diagnosis
+- the plugin successfully biased the run toward upstream/reference surfaces and exact doc targets
+- current strong live evidence now spans retrieval, config/setup, troubleshooting, and docs/reference-oriented prompt classes
 
 ## Compact runtime-proof table
 
@@ -147,6 +164,7 @@ Interpretation:
 | Retrieval / history failure | `history_recall` | `bridgeproof-runtime-v1` | `为什么 openclaw memory search 老是搜不到我之前写的中文记录？` | `before_prompt_build`, hook fired, prompt mutation `(689+0 chars)` | first clean isolated proof |
 | Config / setup | `setup_mapping` | `bridgeproof-config-v1` | `如何在 OpenClaw 里设置 plugin 的 config key？` | `before_prompt_build`, hook fired, prompt mutation `(656+0 chars)`, repeated `config.schema.lookup` | strongest evidence that downstream behavior matched class |
 | Troubleshooting / token/auth symptom | `symptom_diagnosis` | `bridgeproof-troubleshooting-v2` | `为什么 OpenClaw 插件里总是报 token 错误？` | `before_prompt_build`, hook fired, prompt mutation `(712+0 chars)` | clean replacement for the earlier fallback-tinged troubleshooting run |
+| Docs / upstream reference | `upstream_reference` | `bridgeproof-docs-v1` | `before_prompt_build hook 官方 docs 在哪里看？` | `before_prompt_build`, hook fired, prompt mutation `(691+0 chars)`, local docs reads, exact official doc targets returned | proves a distinct docs/reference routing value |
 
 Current meaning of this table:
 - M2 now has a real multi-class live baseline, not a single retrieval sample
