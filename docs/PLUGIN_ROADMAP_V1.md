@@ -114,6 +114,18 @@ Exit criteria:
 - packaging decision made
 - GitHub tracking restored
 
+## 5. Long-horizon execution anchor
+
+The roadmap remains the phase map.
+The sustained delivery baseline now lives in `docs/PLUGIN_V1_DELIVERY_PLAN.md`, which adds:
+- milestone gates
+- workstreams
+- dependencies
+- risks and buffers
+- a near-term sustained execution cadence toward v1
+
+Use the roadmap for direction and the delivery plan for ongoing execution control.
+
 ## 5. Critical path
 
 Current critical path:
