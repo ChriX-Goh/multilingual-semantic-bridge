@@ -31,3 +31,9 @@
 ## Long-horizon execution anchor
 - Long-range execution is now governed by `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`.
 - The project is now explicitly split into: release/publish lane, post-v1 product lane, and research/optionality lane.
+
+## Publication-governance checkpoint
+- Public release is now governed by `docs/PUBLIC_RELEASE_GOVERNANCE_PLAN_2026-04-18.md`.
+- First-pass hygiene scan is now recorded in `docs/REPO_HYGIENE_SCAN_2026-04-18.md`.
+- Current hygiene judgment: attribution surfaces look normal, but several public docs still contain local validation endpoints/profile names that should be relabeled or separated before any public release.
+- Immediate next governance move: classify and rewrite local validation references so public usage guidance and one-machine validation evidence are not mixed together.
