@@ -14,7 +14,7 @@ It claims that the current v1 package is coherent, inspectable, and sufficiently
 
 ### 1. Trigger logic passes curated matrix
 - Status: **PASS**
-- Evidence: compact matrix validator is green at 26/26 curated cases
+- Evidence: compact matrix validator remains green on the current expanded curated case set
 - Notes: includes Mandarin, mixed-language prompts, more colloquial phrasing, near-miss non-triggers, and multiple intent classes
 
 ### 2. Context-style mapping is explicit and stable enough

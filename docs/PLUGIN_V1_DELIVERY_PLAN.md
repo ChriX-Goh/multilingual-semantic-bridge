@@ -52,7 +52,7 @@ Definition:
 
 Current state:
 - now started with a broader curated pass
-- compact matrix expanded from 14 to 26 documented cases
+- compact matrix expanded beyond the earlier 26-case checkpoint and continues to be maintained as the current compact validator surface
 - reproducible validator script now exists for the extracted pure decision layer
 - first M3 review loop already recorded two real style mismatches before the final green pass
 

@@ -153,7 +153,7 @@ Each slice should end with:
 
 ### Soft dependencies
 - better demo/examples
-- cleaner profile hygiene for bridgeproof-style isolated validation
+- cleaner profile hygiene for isolated validation paths used as local proof evidence
 - optional future benchmark tooling
 
 ## 8. Main long-range risks

@@ -18,12 +18,12 @@ Recommended next mode:
 Status: **PASS**
 
 Evidence:
-- compact matrix expanded from 14 to 26 curated cases
+- compact matrix has since advanced beyond the earlier 26-case checkpoint and now includes later bounded hardening/class-fit additions
 - includes Mandarin, mixed-language, more colloquial/Cantonese-style phrasing, and non-trigger near-misses
 - reproducible validator exists via:
   - `scripts/plugin-case-matrix-cases.mjs`
   - `scripts/validate-plugin-case-matrix.mjs`
-- current validator result is green at 26/26
+- current validator result remains green on the current expanded compact matrix
 
 Residual risk:
 - still curated, not benchmark-scale
@@ -64,7 +64,7 @@ Evidence:
 - decision-layer and runtime-proof validation modes are separated clearly
 
 Fresh tightening result:
-- a new isolated post-tightening runtime spot-check was completed on 2026-04-17 UTC+8 against the bridgeproof profile and produced fresh hook-fire evidence
+- a new isolated post-tightening runtime spot-check was completed on 2026-04-17 UTC+8 against one local isolated validation profile and produced fresh hook-fire evidence
 
 ### 5. Plugin-skill cooperation explicitly documented
 Status: **PASS**

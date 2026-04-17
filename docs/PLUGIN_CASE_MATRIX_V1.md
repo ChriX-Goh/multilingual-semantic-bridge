@@ -133,7 +133,7 @@ Isolated live runtime proofs were completed on one local pinned gateway target u
 
 ### Proof 1, retrieval / history recall
 Session:
-- `bridgeproof-runtime-v1`
+- one local isolated validation session for retrieval/history-recall proof
 
 Prompt:
 - `bridge-plugin-test 为什么 openclaw memory search 老是搜不到我之前写的中文记录？`
@@ -150,7 +150,7 @@ Interpretation:
 
 ### Proof 2, config / setup mapping
 Session:
-- `bridgeproof-config-v1`
+- one local isolated validation session for config/setup proof
 
 Prompt:
 - `bridge-plugin-test 如何在 OpenClaw 里设置 plugin 的 config key？`
@@ -168,7 +168,7 @@ Interpretation:
 
 ### Proof 3, troubleshooting / symptom diagnosis
 Session:
-- `bridgeproof-troubleshooting-v2`
+- one local isolated validation session for troubleshooting/symptom-diagnosis proof
 
 Prompt:
 - `bridge-plugin-test 为什么 OpenClaw 插件里总是报 token 错误？`
@@ -185,7 +185,7 @@ Interpretation:
 
 ### Proof 4, docs / upstream reference
 Session:
-- `bridgeproof-docs-v1`
+- one local isolated validation session for docs/upstream-reference proof
 
 Prompt:
 - `bridge-plugin-test OpenClaw plugin 的 before_prompt_build hook 官方 docs 在哪里看？`
