@@ -83,6 +83,23 @@ Latest local style-mapping check:
 - one real misclassification pass was required before reaching 14/14: simple intent ordering initially misrouted some prompts toward retrieval/config too early
 - current tightened rule: troubleshooting wins over generic retrieval/config when the prompt is fundamentally an error/symptom report, but explicit retrieval-failure-around-history cases still map to `history_recall`
 
+## Runtime proof note (2026-04-17, isolated gateway)
+
+An isolated live runtime proof was completed on a pinned gateway target `ws://127.0.0.1:19031` using session `bridgeproof-runtime-v1`.
+The exercised prompt was:
+
+- `bridge-plugin-test 为什么 openclaw memory search 老是搜不到我之前写的中文记录？`
+
+Observed gateway evidence:
+- `[plugins] [hooks] running before_prompt_build (1 handlers, sequential)`
+- `[plugins] multilingual bridge hook fired`
+- `[agent/embedded] hooks: applied prependSystemContext/appendSystemContext (689+0 chars)`
+
+Interpretation:
+- trigger path fired in a real embedded agent run, not only in the local harness
+- the injected block was applied before model submission
+- this runtime-proof sample corresponds to retrieval failure around history, so the expected live context style remains `history_recall`
+
 ## Next use
 
 Use this matrix as the first compact check surface before expanding into a broader multilingual prompt set or full benchmark integration.

@@ -54,7 +54,9 @@ Work items:
 Current checkpoint:
 - intent-aware context styles now exist in the plugin for retrieval, config, docs, troubleshooting, and generic bridge routing
 - injected context now carries both `Bridge intent` and `Context style` instead of using one generic post-trigger block
-- next validation focus is whether the chosen context style actually matches the prompt class and stays compact in real runtime use
+- isolated live runtime proof is now captured on an explicit pinned gateway path (`ws://127.0.0.1:19031`) using session `bridgeproof-runtime-v1`
+- gateway evidence showed `before_prompt_build`, `multilingual bridge hook fired`, and prompt mutation via `prependSystemContext/appendSystemContext (689+0 chars)` before model submission
+- next validation focus is broadening runtime proof beyond the test-trigger case while keeping the injected block compact and correctly matched to prompt class
 
 Exit criteria:
 - prompt-context classes documented
@@ -140,8 +142,8 @@ Mitigation: keep local repo discipline, but explicitly carry GitHub repair as a 
 Start Phase B now.
 
 Concrete next slice:
-- validate the new context-style mapping on the existing matrix
-- add at least one compact runtime-proof note that shows the chosen style for each trigger class
-- tighten any intent misclassification before expanding multilingual coverage
+- add at least one more isolated live runtime proof beyond the test-trigger retrieval case, ideally covering config or troubleshooting
+- record compact runtime-proof notes that show the chosen style for each proved trigger class
+- tighten any remaining intent misclassification before expanding multilingual coverage
 
 This remains the highest-value next move because it upgrades the plugin from "fires correctly" to "helps correctly."
