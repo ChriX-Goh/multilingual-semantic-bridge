@@ -13,17 +13,17 @@ Public release is allowed only when:
 - the project is not overclaiming portability or maturity
 - a current recommendation is written explicitly
 
-Until then, the correct status is **not-yet-go**.
+Until then, the correct status is **not-yet-go**. This document has now advanced beyond that earlier state and records the current gate as `GO-CANDIDATE`.
 
 ## 2. Current gate summary
 
 Current recommendation:
-- **NOT YET GO**
+- **GO-CANDIDATE**
 
 Reason:
 - the project is already meaningful and structurally strong enough to justify a public path
-- but the publication surfaces are still in active cleanup and classification work
-- some public-facing docs still need a more consistent separation between validation evidence and general usage guidance
+- the major publication surfaces are now materially cleaner and more coherent than before
+- the main remaining items are final pre-execution checks and user approval at execution time, not foundational publication blockers
 
 ## 3. Checklist
 
@@ -75,10 +75,11 @@ Current note:
 - [x] current package/repo decision is explicit
 - [x] first ClawHub-readiness review completed
 - [x] draft public-release execution order written
-- [ ] final visibility-change recommendation written
+- [x] final visibility-change recommendation written
+- [x] first explicit ClawHub publication-unit decision written
 
 Current note:
-- publication mechanics are now staged in draft form, but the final recommendation remains blocked on the gate
+- publication mechanics are now staged coherently; remaining blocking weight sits mainly in the gate judgment itself and final non-blocking hygiene acceptance
 
 ### F. External-action control
 - [x] external actions are explicitly gated by policy
@@ -90,10 +91,10 @@ Current note:
 ## 4. Smallest remaining gap list
 
 To move from NOT YET GO toward GO-CANDIDATE, complete these first:
-1. tighten the final visibility-change recommendation
-2. confirm the chosen ClawHub publication unit and any metadata gaps
-3. finish the last meaningful hygiene checks on any remaining public-facing surfaces
-4. decide whether minor wording-polish items are accepted as non-blocking or should be cleaned first
+1. finish the last meaningful hygiene checks on any remaining public-facing surfaces
+2. decide whether minor wording-polish items are accepted as non-blocking or should be cleaned first
+3. re-judge the gate explicitly in light of the new visibility and publication-unit decisions
+4. if still not green, reduce the remaining gap list again rather than widening scope
 
 ## 5. Next recommended slice
 

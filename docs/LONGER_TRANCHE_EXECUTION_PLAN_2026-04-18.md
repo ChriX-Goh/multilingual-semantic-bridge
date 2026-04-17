@@ -114,13 +114,12 @@ Definition of done:
 - external actions remain gated by explicit approval at execution time
 
 ### Tranche Slice R1 — publication readiness re-judgment
-Target:
-- update the release gate from `NOT YET GO` to either:
-  - `GO-CANDIDATE`
-  - or a tighter `NOT YET GO` with a much smaller remaining gap list
+Status:
+- completed
 
-Definition of done:
-- readiness judgment is explicit and evidence-backed
+Outcome:
+- the release gate has now advanced from `NOT YET GO` to `GO-CANDIDATE`
+- remaining work is now final pre-execution verification, not foundational publication cleanup
 
 ## 4. Tranche dependency logic
 

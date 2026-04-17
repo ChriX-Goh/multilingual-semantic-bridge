@@ -41,7 +41,10 @@
 - Sustained execution cadence is now explicitly governed by `docs/SUSTAINED_EXECUTION_CADENCE_2026-04-18.md`.
 - Longer-batch planning is now governed by `docs/LONGER_TRANCHE_EXECUTION_PLAN_2026-04-18.md`.
 - Classification authority now exists at `docs/DEFAULT_VS_LOCAL_CLASSIFICATION_2026-04-18.md` and should govern future public-facing wording.
-- First release-gate draft now exists at `docs/PUBLIC_RELEASE_GATE_CHECKLIST_2026-04-18.md` with current recommendation `NOT YET GO`.
+- The release gate now exists at `docs/PUBLIC_RELEASE_GATE_CHECKLIST_2026-04-18.md` and has advanced to current recommendation `GO-CANDIDATE`.
 - G3 contradiction/classification cleanup has now been materially advanced and a final contradiction check is recorded in `docs/FINAL_CONTRADICTION_CHECK_2026-04-18.md`.
 - M2 small weak-anchor pressure-test family is complete, with validator now preserved at 42/42.
-- Immediate tranche move: continue governance lane with the final visibility-change recommendation and explicit ClawHub publication-unit decision.
+- Final visibility recommendation now exists at `docs/FINAL_VISIBILITY_RECOMMENDATION_2026-04-18.md`.
+- Explicit first ClawHub publication-unit decision now exists at `docs/CLAWHUB_PUBLICATION_UNIT_DECISION_2026-04-18.md`.
+- Tranche-end re-judgment is recorded at `docs/RELEASE_GATE_REJUDGMENT_2026-04-18.md`.
+- Immediate next move is no longer foundational cleanup; it is final pre-execution verification before any outward action.
