@@ -38,7 +38,7 @@ It claims that the current v1 package is coherent, inspectable, and sufficiently
 ### 4. Fresh post-tightening isolated runtime spot-check succeeded
 - Status: **PASS**
 - Date: 2026-04-17 UTC+8
-- Isolated target: bridgeproof profile on `ws://127.0.0.1:19031`
+- Isolated target: one local validation profile on a pinned local gateway path, used as validation evidence rather than a universal default setup
 - Prompt: `點解 OpenClaw plugin 成日報 token error？`
 - Conditions:
   - no `testTrigger` used
@@ -48,7 +48,7 @@ It claims that the current v1 package is coherent, inspectable, and sufficiently
   - fresh log evidence contains `multilingual bridge hook fired`
   - assistant output responded in Cantonese-style troubleshooting form rather than falling back to generic English-only handling
 - Important note:
-  - the isolated profile required `--allow-unconfigured` because the old bridgeproof config lacked `gateway.mode`
+  - the isolated validation profile required `--allow-unconfigured` because the older local validation config lacked `gateway.mode`
   - this is a profile hygiene caveat, not a v1 plugin logic blocker
 
 ### 5. Validation workflow is documented and repeatable

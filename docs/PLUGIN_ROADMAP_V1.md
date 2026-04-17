@@ -54,12 +54,12 @@ Work items:
 Current checkpoint:
 - intent-aware context styles now exist in the plugin for retrieval, config, docs, troubleshooting, and generic bridge routing
 - injected context now carries both `Bridge intent` and `Context style` instead of using one generic post-trigger block
-- isolated live runtime proof is now captured on an explicit pinned gateway path (`ws://127.0.0.1:19031`) across multiple sessions, not just one retrieval sample
-- confirmed strong live proof classes now include:
-  - retrieval / history recall via `bridgeproof-runtime-v1`
-  - config / setup via `bridgeproof-config-v1`
-  - troubleshooting / symptom diagnosis via `bridgeproof-troubleshooting-v2`
-  - docs / upstream reference via `bridgeproof-docs-v1`
+- isolated live runtime proof is now captured on a local pinned validation path across multiple sessions, not just one retrieval sample
+- confirmed strong live proof classes now include local isolated validation evidence for:
+  - retrieval / history recall
+  - config / setup
+  - troubleshooting / symptom diagnosis
+  - docs / upstream reference
 - strongest gateway evidence still includes `before_prompt_build`, `multilingual bridge hook fired`, and prompt mutation via `prependSystemContext/appendSystemContext` before model submission
 - docs/reference turned out to be worth proving because it demonstrated a distinct downstream shape: official doc targeting and exact reference surfacing rather than retrieval, setup mapping, or troubleshooting guidance
 - next validation focus now shifts away from collecting more intent-class trophies and toward tightening compactness/prompt-class fit before broader coverage expansion

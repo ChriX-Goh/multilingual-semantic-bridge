@@ -129,7 +129,7 @@ Latest local style-mapping check:
 
 ## Runtime proof note (2026-04-17, isolated gateway)
 
-Isolated live runtime proofs were completed on the pinned gateway target `ws://127.0.0.1:19031`.
+Isolated live runtime proofs were completed on one local pinned gateway target used for validation evidence only, not as a universal default deployment path.
 
 ### Proof 1, retrieval / history recall
 Session:
@@ -205,10 +205,10 @@ Interpretation:
 
 | Class | Expected context style | Session | Prompt sketch | Strong runtime evidence | Notes |
 |---|---|---|---|---|---|
-| Retrieval / history failure | `history_recall` | `bridgeproof-runtime-v1` | `为什么 openclaw memory search 老是搜不到我之前写的中文记录？` | `before_prompt_build`, hook fired, prompt mutation `(689+0 chars)` | first clean isolated proof |
-| Config / setup | `setup_mapping` | `bridgeproof-config-v1` | `如何在 OpenClaw 里设置 plugin 的 config key？` | `before_prompt_build`, hook fired, prompt mutation `(656+0 chars)`, repeated `config.schema.lookup` | strongest evidence that downstream behavior matched class |
-| Troubleshooting / token/auth symptom | `symptom_diagnosis` | `bridgeproof-troubleshooting-v2` | `为什么 OpenClaw 插件里总是报 token 错误？` | `before_prompt_build`, hook fired, prompt mutation `(712+0 chars)` | clean replacement for the earlier fallback-tinged troubleshooting run |
-| Docs / upstream reference | `upstream_reference` | `bridgeproof-docs-v1` | `before_prompt_build hook 官方 docs 在哪里看？` | `before_prompt_build`, hook fired, prompt mutation `(691+0 chars)`, local docs reads, exact official doc targets returned | proves a distinct docs/reference routing value |
+| Retrieval / history failure | `history_recall` | local isolated validation session | `为什么 openclaw memory search 老是搜不到我之前写的中文记录？` | `before_prompt_build`, hook fired, prompt mutation `(689+0 chars)` | first clean isolated proof |
+| Config / setup | `setup_mapping` | local isolated validation session | `如何在 OpenClaw 里设置 plugin 的 config key？` | `before_prompt_build`, hook fired, prompt mutation `(656+0 chars)`, repeated `config.schema.lookup` | strongest evidence that downstream behavior matched class |
+| Troubleshooting / token/auth symptom | `symptom_diagnosis` | local isolated validation session | `为什么 OpenClaw 插件里总是报 token 错误？` | `before_prompt_build`, hook fired, prompt mutation `(712+0 chars)` | clean replacement for the earlier fallback-tinged troubleshooting run |
+| Docs / upstream reference | `upstream_reference` | local isolated validation session | `before_prompt_build hook 官方 docs 在哪里看？` | `before_prompt_build`, hook fired, prompt mutation `(691+0 chars)`, local docs reads, exact official doc targets returned | proves a distinct docs/reference routing value |
 
 Current meaning of this table:
 - M2 now has a real multi-class live baseline, not a single retrieval sample
