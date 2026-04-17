@@ -23,27 +23,22 @@ This is not the full benchmark harness. It is a compact runtime-focused matrix f
 
 ## Initial case matrix
 
-| ID | Prompt | Expected | Why |
-|---|---|---|---|
-| T01 | `bridge-plugin-test openclaw plugin 怎么设置` | Trigger | Explicit test trigger should force activation |
-| T02 | `怎么让 OpenClaw 的 memory search 更容易命中中文说法？` | Trigger | Mixed Chinese/English technical retrieval wording |
-| T03 | `为什么我的 github repo 在 openclaw 里找不到` | Trigger | Multilingual technical problem prompt with English-heavy target |
-| T04 | `如何配置 vaultwarden token 给 OpenClaw plugin 用？` | Trigger | Multilingual config/auth prompt with technical anchors |
-| T05 | `为什么 Codex 在 OpenClaw 插件里报 token 错误` | Trigger | Multilingual technical error prompt |
-| N01 | `请帮我总结今天的进度` | No trigger | Generic progress request, not a bridge/routing problem |
-| N02 | `今天天气怎么样` | No trigger | Non-technical everyday query |
-| N03 | `OpenClaw plugin docs for before_prompt_build hook` | No trigger | Pure English and already explicit |
-| B01 | `skill 和 memory 的区别是什么` | No trigger | Borderline conceptual comparison; should stay quiet after false-positive tuning |
-| B02 | `OpenClaw memory 和 skill 要怎么区分？` | No trigger | Mixed-language conceptual comparison; should not auto-bridge |
-| B03 | `这个 plugin 的作用是什么` | No trigger | Generic conceptual explanation request |
-| B04 | `我想找之前关于 openclaw plugin 的笔记` | No trigger | Retrieval-sounding, but currently too generic and should not auto-bridge yet |
-| B05 | `为什么 openclaw memory search 老是搜不到我之前写的中文记录` | Trigger | Clear multilingual retrieval failure around English-heavy technical target |
-| B06 | `如何在 OpenClaw 里设置 plugin 的 config key` | Trigger | Multilingual config task with technical anchors |
-| B02 | `OpenClaw memory 和 skill 要怎么区分？` | No trigger | Conceptual distinction question, not clearly retrieval/routing/problem-solving |
-| B03 | `这个 plugin 的作用是什么` | No trigger | Generic conceptual explanation request |
-| B04 | `我想找之前关于 openclaw plugin 的笔记` | No trigger | Retrieval-sounding, but currently too generic and should not auto-bridge yet |
-| B05 | `为什么 openclaw memory search 老是搜不到我之前写的中文记录` | Trigger | Clear multilingual retrieval failure around English-heavy technical target |
-| B06 | `如何在 OpenClaw 里设置 plugin 的 config key` | Trigger | Multilingual config task with technical anchors |
+| ID | Prompt | Expected | Expected context style | Why |
+|---|---|---|---|---|
+| T01 | `bridge-plugin-test openclaw plugin 怎么设置` | Trigger | `setup_mapping` | Explicit test trigger should force activation; prompt still looks like setup/config |
+| T02 | `怎么让 OpenClaw 的 memory search 更容易命中中文说法？` | Trigger | `history_recall` | Mixed Chinese/English technical retrieval wording |
+| T03 | `为什么我的 github repo 在 openclaw 里找不到` | Trigger | `symptom_diagnosis` | Multilingual technical problem prompt with English-heavy target |
+| T04 | `如何配置 vaultwarden token 给 OpenClaw plugin 用？` | Trigger | `setup_mapping` | Multilingual config/auth prompt with technical anchors |
+| T05 | `为什么 Codex 在 OpenClaw 插件里报 token 错误` | Trigger | `symptom_diagnosis` | Multilingual technical error prompt |
+| N01 | `请帮我总结今天的进度` | No trigger | n/a | Generic progress request, not a bridge/routing problem |
+| N02 | `今天天气怎么样` | No trigger | n/a | Non-technical everyday query |
+| N03 | `OpenClaw plugin docs for before_prompt_build hook` | No trigger | n/a | Pure English and already explicit |
+| B01 | `skill 和 memory 的区别是什么` | No trigger | n/a | Borderline conceptual comparison; should stay quiet after false-positive tuning |
+| B02 | `OpenClaw memory 和 skill 要怎么区分？` | No trigger | n/a | Mixed-language conceptual comparison; should not auto-bridge |
+| B03 | `这个 plugin 的作用是什么` | No trigger | n/a | Generic conceptual explanation request |
+| B04 | `我想找之前关于 openclaw plugin 的笔记` | No trigger | n/a | Retrieval-sounding, but currently too generic and should not auto-bridge yet |
+| B05 | `为什么 openclaw memory search 老是搜不到我之前写的中文记录` | Trigger | `history_recall` | Clear multilingual retrieval failure around English-heavy technical target |
+| B06 | `如何在 OpenClaw 里设置 plugin 的 config key` | Trigger | `setup_mapping` | Multilingual config task with technical anchors |
 
 ## Current status
 
@@ -68,6 +63,20 @@ Result: 14/14 cases passed after tightening conceptual-comparison handling.
 - New non-trigger borderline cases passed: B02, B03, B04
 - New trigger borderline cases passed: B05, B06
 - Important tuning lesson: mixed-language conceptual comparison prompts can look superficially like bridge-worthy technical prompts, especially when they contain English anchors plus `怎么`. The plugin should suppress bridge activation for conceptual-comparison style prompts unless they are clearly problem/retrieval/config oriented.
+
+## Phase B context-style mapping checkpoint
+
+The plugin is no longer using one generic injected block for all trigger cases.
+Current intended mapping is:
+
+- retrieval / recall → `history_recall`
+- config / setup → `setup_mapping`
+- docs / official reference → `upstream_reference`
+- troubleshooting / error diagnosis → `symptom_diagnosis`
+- generic multilingual technical routing → `generic_bridge`
+
+Immediate validation question after this checkpoint:
+- when a case triggers, does the selected context style match the real prompt class well enough to help rather than just add noise?
 
 ## Next use
 
