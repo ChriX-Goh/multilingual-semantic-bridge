@@ -24,7 +24,8 @@
 ## Post-v1 backlog anchor
 - The explicit post-v1 backlog surface is now `docs/PLUGIN_POST_V1_BACKLOG.md`.
 - First bounded post-v1 slice is complete: Bucket A (utility hardening) suppressed a vague mixed-language usage/comparison false-positive family and expanded the compact matrix to 30/30 passing cases.
-- Recommended next bounded pick: continue Bucket A with either one hard false-negative family or one compactness/noise-trimming slice.
+- Second bounded post-v1 slice is complete: Bucket A widened English-light technical-anchor coverage for artifact lookup/troubleshooting prompts and expanded the compact matrix to 32/32 passing cases.
+- Recommended next bounded pick: continue Bucket A with either one compactness/noise-trimming slice or one retrieval-vs-troubleshooting class-fit refinement.
 
 ## Long-horizon execution anchor
 - Long-range execution is now governed by `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`.

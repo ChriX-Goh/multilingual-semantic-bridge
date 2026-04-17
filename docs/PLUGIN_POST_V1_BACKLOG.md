@@ -124,6 +124,23 @@ Recommended next pick after this:
 - stay in Bucket A
 - choose either one hard false-negative family or one compactness/noise-trimming slice
 
+## 3B. Completed second bounded slice
+
+Completed on 2026-04-18 UTC+8:
+- Bucket: Utility hardening
+- Question: should English-light history/artifact lookup prompts with loanwords such as `login`, `error`, `log`, and `sdk` still trigger when they clearly point at technical artifacts or troubleshooting surfaces?
+- Expected evidence: a small technical-anchor expansion plus matrix proof
+- Result: completed
+
+What changed:
+- English-light prompts such as `之前個 login error 筆記喺邊度？` now trigger correctly as `history_recall`
+- direct artifact/troubleshooting lookups such as `我想睇 error log` now trigger correctly as `symptom_diagnosis`
+- compact validator now passes 32/32 after adding this second post-v1 hardening family
+
+Recommended next pick after this:
+- stay in Bucket A
+- next best choices are either one compactness/noise-trimming slice or a narrower class-fit refinement between retrieval and troubleshooting edges
+
 ## 4. What should not be picked next by default
 
 Do not pick these first unless a stronger reason appears:
