@@ -39,5 +39,11 @@ export const cases = [
   { id: 'A401', prompt: '之前寫過個 token error runbook，而家又報同樣問題，應該睇邊邊先？', expected: true, style: 'history_recall' },
   { id: 'A402', prompt: '之前個 github repo 找不到筆記我想翻返，但而家 repo 又喺 openclaw 入面搵唔到', expected: true, style: 'history_recall' },
   { id: 'A403', prompt: '之前記低咗 plugin config key 點設，但而家設定又失敗，先搵筆記定先查 config？', expected: true, style: 'setup_mapping' },
-  { id: 'A404', prompt: '我之前寫過 login error note，但而家只想排查點解仲係 login error', expected: true, style: 'symptom_diagnosis' }
+  { id: 'A404', prompt: '我之前寫過 login error note，但而家只想排查點解仲係 login error', expected: true, style: 'symptom_diagnosis' },
+  { id: 'PT01', prompt: 'OpenClaw 個 plugin key 要喺邊度設？', expected: true, style: 'setup_mapping' },
+  { id: 'PT02', prompt: 'memory search 成日唔中我之前啲中文 note', expected: true, style: 'history_recall' },
+  { id: 'PT03', prompt: 'before_prompt_build 官方 docs 我想睇入口', expected: true, style: 'upstream_reference' },
+  { id: 'PT04', prompt: 'plugin token 又錯咗，想睇下 error log 應該點查', expected: true, style: 'symptom_diagnosis' },
+  { id: 'PT05', prompt: 'OpenClaw 個 plugin 同 skill 點分工先最好', expected: false, style: null },
+  { id: 'PT06', prompt: 'docs 同 note 我想整理一下', expected: false, style: null }
 ];

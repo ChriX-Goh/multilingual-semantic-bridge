@@ -27,7 +27,8 @@
 - Second bounded post-v1 slice is complete: Bucket A widened English-light technical-anchor coverage for artifact lookup/troubleshooting prompts and expanded the compact matrix to 32/32 passing cases.
 - Third bounded post-v1 slice is complete: Bucket A trimmed repeated bridge-context boilerplate while preserving class guidance, with validator stability preserved at 32/32.
 - Fourth bounded post-v1 slice is complete: Bucket A refined retrieval-vs-troubleshooting class fit on ambiguous history-vs-current-issue prompts, with validator stability now preserved at 36/36.
-- Recommended next bounded pick: either one more narrow class-fit/false-positive refinement if a real edge family appears, or one small pressure-test family without broad benchmark inflation.
+- Fifth bounded post-v1 slice is complete: a small English-light / weak-anchor pressure-test family exposed three real gaps, which were then tightened in a bounded way, with validator stability now preserved at 42/42.
+- Recommended next bounded pick: shift back to governance lane for README/install/public-story coherence and ClawHub-readiness review, unless a clearly new edge family appears.
 
 ## Long-horizon execution anchor
 - Long-range execution is now governed by `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`.

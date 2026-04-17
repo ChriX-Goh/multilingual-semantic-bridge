@@ -179,6 +179,27 @@ Recommended next pick after this:
 - stay in Bucket A or move lightly into Bucket B
 - best next choices are either one more bounded false-positive/class-fit refinement if a real edge family appears, or one small pressure-test family rather than broad benchmark expansion
 
+## 4B. Completed small pressure-test family
+
+Completed on 2026-04-18 UTC+8:
+- Bucket: Broader coverage pressure test
+- Question: how does the plugin behave on English-light but still technical multilingual prompts and weak-anchor mixed phrasing?
+- Expected evidence: one named pressure-test family plus an honest pass/fail result
+- Result: completed
+
+Pressure-test family:
+- English-light / weak-anchor multilingual technical prompts
+
+What changed:
+- added six pressure-test cases probing weak English anchors, Cantonese-style phrasing, and non-actionable mixed-language near-misses
+- surfaced three real gaps on the first pass
+- tightened config phrasing recognition, retrieval activation for `唔中`/weak-anchor memory-search failures, and suppression for organization-only mixed prompts
+- compact validator now passes 42/42
+
+Recommended next pick after this:
+- return to governance lane for README/install/public-story coherence and ClawHub-readiness review
+- only add another product refinement if a later pressure-test family reveals a genuinely new edge class
+
 ## 4. What should not be picked next by default
 
 Do not pick these first unless a stronger reason appears:
