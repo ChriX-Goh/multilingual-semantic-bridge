@@ -60,6 +60,27 @@ The plugin should activate only when at least one of these is true:
 - do not add broad speculative rewrites when the exact target is already explicit
 - do not treat memory as the default target for everything
 
+## Relationship between plugin and skill
+
+The intended model is **cooperative, not replacement**.
+
+### What the plugin should do
+- run automatically at prompt-build time when the activation conditions are met
+- add a compact bridge context block
+- reduce activation failure for multilingual / synonym-drift / terminology-mismatch cases
+- stay narrow, fast, and detachable
+
+### What the skill should still do
+- provide the explicit bridge method
+- provide richer reasoning discipline and examples
+- guide deeper target-surface selection when the case is ambiguous
+- carry the longer-form operational method and reusable mapping ideas
+
+### Practical effect
+- In easy cases, the plugin may be enough by itself.
+- In harder cases, the plugin should act like an automatic on-ramp that makes the assistant more likely to use the original bridge discipline well.
+- So the desired outcome is not "plugin or skill" but "plugin helps the skill's logic show up automatically when needed".
+
 ## What remains in the skill
 
 The skill still owns:
