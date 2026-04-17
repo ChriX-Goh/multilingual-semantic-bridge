@@ -158,8 +158,8 @@ Mitigation: keep local repo discipline, but explicitly carry GitHub repair as a 
 Start Phase B now.
 
 Concrete next slice:
-- record a compact runtime-proof table that shows the chosen style for each proved trigger class
-- optionally add docs/reference as the next strong class if it reveals a meaningfully different prompt-time bridge value
+- the compact runtime-proof table is now recorded in `docs/PLUGIN_CASE_MATRIX_V1.md`
+- decide whether docs/reference is worth adding as the next strong class if it reveals a meaningfully different prompt-time bridge value
 - tighten any remaining compactness/noise issues before expanding multilingual coverage
 
 This remains the highest-value next move because it upgrades the plugin from "fires correctly" to "helps correctly."
