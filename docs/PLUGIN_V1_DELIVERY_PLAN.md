@@ -51,7 +51,10 @@ Definition:
 - at least one explicit false positive and one explicit false negative review loop recorded
 
 Current state:
-- not started in depth
+- now started with a broader curated pass
+- compact matrix expanded from 14 to 26 documented cases
+- reproducible validator script now exists for the extracted pure decision layer
+- first M3 review loop already recorded two real style mismatches before the final green pass
 
 ### M4. Operator control and observability
 Definition:

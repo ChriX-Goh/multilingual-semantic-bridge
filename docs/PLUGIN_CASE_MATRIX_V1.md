@@ -39,6 +39,18 @@ This is not the full benchmark harness. It is a compact runtime-focused matrix f
 | B04 | `我想找之前关于 openclaw plugin 的笔记` | No trigger | n/a | Retrieval-sounding, but currently too generic and should not auto-bridge yet |
 | B05 | `为什么 openclaw memory search 老是搜不到我之前写的中文记录` | Trigger | `history_recall` | Clear multilingual retrieval failure around English-heavy technical target |
 | B06 | `如何在 OpenClaw 里设置 plugin 的 config key` | Trigger | `setup_mapping` | Multilingual config task with technical anchors |
+| M01 | `點樣先喺 OpenClaw 設置 plugin 嘅 config key？` | Trigger | `setup_mapping` | Cantonese-style config wording should still map cleanly |
+| M02 | `點解 OpenClaw plugin 成日報 token error？` | Trigger | `symptom_diagnosis` | Cantonese-style symptom phrasing with English technical anchors |
+| M03 | `OpenClaw docs 邊度睇 before_prompt_build hook？` | Trigger | `upstream_reference` | Docs/reference lookup with mixed-language phrasing |
+| M04 | `GitHub repo 喺 OpenClaw 入面搵唔到，點算？` | Trigger | `symptom_diagnosis` | Colloquial symptom-first repo/access problem |
+| M05 | `想搵返之前寫過嘅 OpenClaw runbook，但 memory search 成日搜唔到` | Trigger | `history_recall` | Retrieval failure around prior notes/runbooks with colloquial wording |
+| M06 | `OpenClaw plugin 同 skill 有咩分別？` | No trigger | n/a | Mixed-language conceptual comparison should stay quiet |
+| M07 | `可唔可以幫我睇下今日天氣同 plugin update` | No trigger | n/a | Mixed everyday wording plus a technical noun should not auto-bridge |
+| M08 | `How do I set OpenClaw plugin config key for Vaultwarden login?` | No trigger | n/a | Pure English, explicit setup wording should remain outside the bridge |
+| M09 | `請問 docker 入面點樣裝 openclaw plugin sdk？` | Trigger | `setup_mapping` | Colloquial install/setup phrasing should map to setup rather than docs-only |
+| M10 | `OpenClaw hook documentation 我想睇官方 reference` | Trigger | `upstream_reference` | Mixed-language upstream-reference request |
+| M11 | `之前個 Codex token error runbook 喺邊度？` | Trigger | `history_recall` | Prior-artifact lookup should route to retrieval/history rather than generic troubleshooting |
+| M12 | `GitHub workflow 同 repo 有什么区别` | No trigger | n/a | Generic conceptual comparison should stay quiet even with English anchors |
 
 ## Current status
 
@@ -63,6 +75,34 @@ Result: 14/14 cases passed after tightening conceptual-comparison handling.
 - New non-trigger borderline cases passed: B02, B03, B04
 - New trigger borderline cases passed: B05, B06
 - Important tuning lesson: mixed-language conceptual comparison prompts can look superficially like bridge-worthy technical prompts, especially when they contain English anchors plus `怎么`. The plugin should suppress bridge activation for conceptual-comparison style prompts unless they are clearly problem/retrieval/config oriented.
+
+## M3 coverage expansion checkpoint (2026-04-17)
+
+A broader curated coverage pass was then added for M3 using extracted pure decision logic in `plugin/logic.ts` plus a reproducible validator script:
+- `scripts/plugin-case-matrix-cases.mjs`
+- `scripts/validate-plugin-case-matrix.mjs`
+
+Expanded result: 26/26 cases passed.
+
+What was added in this pass:
+- more colloquial Chinese/Cantonese phrasing (`點樣`, `點解`, `搵唔到`, `喺邊度`)
+- more symptom-first prompts
+- more runbook/history-style lookups
+- more near-miss mixed-language non-trigger cases
+- one explicit pure-English setup case that should still stay outside the bridge
+
+Two real style mismatches surfaced before the final green pass:
+- colloquial install/setup phrasing around `plugin sdk` was initially falling into docs/reference instead of setup mapping
+- prior-runbook lookup wording around a token error was initially falling into troubleshooting instead of retrieval/history recall
+
+The resulting heuristic refinements were small but real:
+- config/setup intent now recognizes colloquial install wording such as `裝`/`安装`/`安裝`
+- retrieval/history intent now treats `runbook` plus prior-artifact lookup wording as retrieval rather than generic troubleshooting
+
+Current meaning of the matrix:
+- compact validation is no longer only OpenClaw-Mandarin-heavy
+- the plugin now has at least one documented false-positive/false-negative review loop inside M3, not only M1/M2 trigger tuning
+- broader coverage still remains curated and compact rather than pretending to be a full benchmark
 
 ## Phase B context-style mapping checkpoint
 

@@ -78,6 +78,13 @@ Work items:
 - add near-miss cases that should stay quiet
 - test whether trigger logic depends too heavily on English anchors
 
+Current checkpoint:
+- a first broader curated M3 pass now exists in the case matrix
+- documented case count expanded from 14 to 26
+- the pass now includes colloquial/Cantonese-style prompts (`點樣`, `點解`, `搵唔到`, `喺邊度`), runbook/history lookups, and additional mixed-language near-miss non-trigger cases
+- plugin decision logic was extracted into `plugin/logic.ts`, and a reproducible validator now exists at `scripts/validate-plugin-case-matrix.mjs`
+- two real M3 style mismatches were surfaced and corrected before the final green pass: colloquial install wording was initially too docs-biased, and prior-runbook lookup wording was initially too troubleshooting-biased
+
 Exit criteria:
 - substantially larger matrix
 - at least one explicit false-positive and one false-negative review pass
