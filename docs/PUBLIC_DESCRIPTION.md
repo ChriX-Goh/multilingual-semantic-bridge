@@ -1,50 +1,61 @@
 # Multilingual Semantic Bridge — Public Description
 
 ## One-line description
-A bridge package that helps non-English or mixed-language technical requests hit the right English-heavy technical targets more reliably.
+Help multilingual users reach the right English-heavy technical target, not just a translated version of the question.
 
 ## Short description
-Multilingual Semantic Bridge is a cross-lingual retrieval and routing bridge package for technical environments where user phrasing and system terminology do not naturally live in the same language.
+Multilingual Semantic Bridge is a skill for assistant environments where the user speaks one way, but the system names the answer another way.
 
-Instead of acting like a generic translator, it helps the assistant:
-- preserve the original user wording
-- derive canonical intent
-- generate an English technical pivot when it improves target matching
-- bridge terminology across user wording, local vocabulary, and official terminology
-- improve routing toward memory, docs, skills, files, and exact technical surfaces
-
-## What problem it solves
-In many assistant environments, the user may ask in Chinese or another non-English language, while the most useful targets are named in English:
+A user may ask in Chinese, Cantonese, or mixed language.
+The real answer may live in English-heavy places such as:
 - official docs
 - config keys
 - provider names
 - CLI commands
 - skill metadata
-- operational files and troubleshooting docs
+- logs and operational files
 
-This skill helps connect those two worlds without reducing the workflow to a language-by-language rule pack.
+This project helps the assistant bridge that mismatch more intelligently.
 
-## What makes it different
-- not a phrasebook
-- not a translation-only skill
-- not a per-language hard-coded routing table
-- focused on target resolution and retrieval/routing precision
+## What it actually does
+Instead of treating the problem as pure translation, the bridge helps the assistant:
+- preserve the original user wording
+- recover the real intent
+- create a better technical pivot when needed
+- map user language to official terminology
+- route toward the most likely answer surface
+
+## Why that matters
+A lot of assistant mistakes happen because the wording and the target do not line up.
+The user is understandable.
+The system is searchable.
+But the names do not match.
+
+That is where this bridge helps most.
 
 ## Best-fit use cases
 - multilingual memory recall
 - official-doc lookup from non-English requests
-- skill discovery when skill metadata is English-heavy
-- local operational-file targeting
-- config/log/error interpretation where exact English tokens matter
+- skill discovery when skill names and metadata are English-heavy
+- local file and runbook targeting
+- config, log, and error interpretation where exact English tokens matter
 
-## Boundary
-This skill improves retrieval/routing discipline.
-It does not by itself guarantee better embeddings, perfect multilingual reasoning, or automatic backend-level retrieval upgrades.
+## What makes it different
+This is not trying to be:
+- a generic translator
+- a phrasebook
+- a hard-coded rule pack per language
+
+It is trying to be a practical target-resolution layer for real technical work.
 
 ## Current public framing
-This project now has a signed-off **narrow v1** baseline:
-- the skill carries the deeper bridge method
-- the plugin provides an automatic narrow on-ramp for bridge-worthy multilingual technical prompts
+Current v1 is deliberately narrow and honest:
+- the **skill** is the deeper method
+- the **plugin** is the narrow automatic on-ramp
 
-The claim is not that multilingual retrieval is universally solved.
-The claim is that this narrow v1 package is already coherent, useful, inspectable, and supported by real validation evidence.
+The claim is not that multilingual retrieval is solved forever.
+The claim is that this version is already coherent, useful, inspectable, and validated enough to be worth adopting and improving.
+
+## Public links
+- GitHub: https://github.com/ChriX-Goh/multilingual-semantic-bridge
+- ClawHub: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge

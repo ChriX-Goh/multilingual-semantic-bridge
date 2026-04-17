@@ -3,78 +3,100 @@
 > Status: signed-off narrow v1 release note
 > Date: 2026-04-17 UTC+8
 
-## Summary
+## At a glance
 
-This release marks the signed-off **narrow v1** cut of **Multilingual Semantic Bridge**:
-a bridge package that combines:
-- a deeper skill for multilingual retrieval/routing discipline
-- a narrow prompt-time plugin on-ramp for bridge-worthy multilingual technical prompts
+Multilingual Semantic Bridge v1 is the first clean public cut of a simple idea:
 
-The project is not a generic translation tool.
-Its job is to improve **target matching** across English-heavy technical surfaces such as:
-- memory recall
-- official docs
-- local files and operational docs
-- skill routing
-- config / CLI / provider terminology
+**When users ask in one language, but the answer is named in another, the assistant should still be able to find the right thing.**
+
+This release packages that idea into:
+- a deeper **skill** for multilingual retrieval and routing discipline
+- a narrow **plugin** on-ramp that helps catch bridge-worthy multilingual technical prompts automatically
+
+Public pages:
+- GitHub: https://github.com/ChriX-Goh/multilingual-semantic-bridge
+- ClawHub: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
+
+## The problem this release tackles
+
+In real technical environments, users often ask naturally, but the answer is stored unnaturally.
+
+The user might write in Chinese, Cantonese, or mixed language.
+The system might store the important target under English-heavy names like:
+- config keys
+- provider names
+- CLI commands
+- doc titles
+- skill metadata
+- logs or operational docs
+
+That mismatch creates missed hits, weak routing, and a lot of unnecessary assistant confusion.
 
 ## What this version does
 
-The skill now expresses one clear mainline pipeline:
-1. preserve original input
-2. derive canonical intent
-3. generate a technical pivot when needed
-4. bridge terminology
-5. improve retrieval and routing
-6. persist confirmed mappings
+This version gives the assistant a practical bridge workflow:
+1. preserve the original input
+2. recover the actual intent
+3. generate a stronger technical pivot when needed
+4. connect user wording with official terminology
+5. route toward the right answer surface
 
-Operationally, this version now makes explicit:
-- when original phrasing is often enough
-- when canonical intent should be treated as the default bridge layer
-- when an English technical pivot is strongly recommended
-- when exact identifiers must remain verbatim
+That answer surface may be:
+- memory
+- official docs
+- a skill
+- a local file or runbook
+- an exact technical artifact such as a command, path, or config key
+
+## Why this release is useful
+
+This release matters because it addresses a very common failure mode without pretending to solve everything.
+
+It does **not** say:
+- translate everything
+- rewrite everything into English
+- trust memory for everything
+- guess based on vibes
+
+Instead, it says:
+- preserve the original meaning
+- use a technical pivot only when it helps
+- choose the right target surface deliberately
+- keep exact identifiers exact
 
 ## What evidence supports this cut
 
-This cut is not based only on design preference.
-It is backed by project evidence across multiple target classes and validation layers:
-- compact trigger/style matrix validation
-- isolated runtime proof across retrieval/history recall
-- isolated runtime proof across config/setup
-- isolated runtime proof across troubleshooting/symptom diagnosis
-- isolated runtime proof across docs/upstream reference
-- documented validation workflow, operator controls, and plugin-skill boundary contract
+This release is supported by more than design preference.
+It is backed by:
+- trigger and style-matrix validation
+- isolated runtime proof across history recall
+- isolated runtime proof across config and setup
+- isolated runtime proof across troubleshooting
+- isolated runtime proof across docs and upstream reference
+- explicit validation workflow and plugin-skill boundary documentation
 
-Current project conclusion:
-- original-language retrieval remains first-class
-- English technical pivots act as an additive precision layer
-- the bridge is especially valuable when target naming is English-heavy and operationally specific
-- the current narrow plugin on-ramp is useful enough to sign off, without replacing the deeper skill method
-
-## What this version does not claim
+## Honest boundaries
 
 This release does **not** claim that:
-- multilingual retrieval is a solved problem in every setting
-- backend experimentation is complete
-- broad external benchmarking is already exhaustive
+- multilingual retrieval is solved in every environment
 - every language/domain pair will benefit equally
+- backend retrieval quality is magically upgraded by this package alone
+- the plugin replaces the deeper skill method
 
-This is the first stable publishable cut, not the last word on the project.
+This is a strong first release, not a final theory of multilingual technical assistance.
 
-## Why this release matters
+## Practical framing
 
-Many technical environments remain English-heavy even when user requests are not.
-This skill gives the assistant a practical way to:
-- keep the user's original meaning
-- reformulate it into a better retrieval/routing target
-- improve precision without collapsing everything into one language-only workflow
+The current v1 shape is intentionally clear:
+- **skill** = the deeper method
+- **plugin** = the lightweight automatic entry point
+
+That makes the project easier to inspect, safer to roll back, and easier to improve in bounded steps.
 
 ## Likely next phase
 
-Future work, if pursued, should now be treated as **post-v1** work rather than hidden unfinished v1 cleanup.
-Possible later directions:
+Post-v1 work should focus on:
 - broader evaluation sets
-- explicit benchmark harnesses
-- utility hardening on harder multilingual prompts
-- stronger examples of plugin-alone vs plugin-plus-skill discipline
-- deeper retrieval-side experiments only if later evidence justifies them
+- harder multilingual edge cases
+- more examples of plugin-only vs plugin-plus-skill behavior
+- further utility hardening where evidence shows real value

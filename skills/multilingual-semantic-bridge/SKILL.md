@@ -1,17 +1,26 @@
 ---
 name: multilingual-semantic-bridge
-description: Build a general cross-lingual semantic bridge between user input and English-heavy technical targets such as memory, docs, config terms, skill metadata, and tool paths. Use when the user's wording and the likely target system do not naturally live in the same linguistic or terminological space, and the assistant needs to derive canonical intent, create a technical pivot, bridge terminology, and improve retrieval or routing without relying on one rule pack per language.
+description: Help multilingual users reach the right English-heavy technical target, not just a translated version of the question. Use this when the user asks in non-English or mixed-language wording, but the best answer is easier to find through English-heavy docs, config keys, commands, skill metadata, logs, or local technical files.
 ---
 
 # Multilingual Semantic Bridge
 
+This skill is for a very common technical mismatch:
+- the user asks naturally in one language
+- the system names the answer in another language, usually English-heavy technical terminology
+- the assistant needs help connecting the two
+
 Use this skill to bridge between:
-- the user's surface language
-- the system's likely target language/terminology
-- the actual retrieval/routing surfaces that matter
+- the user's wording
+- the system's likely terminology
+- the actual retrieval or routing surface that matters
 
 The goal is not translation for its own sake.
 The goal is to recover the **right technical target**.
+
+## Public links
+- GitHub: https://github.com/ChriX-Goh/multilingual-semantic-bridge
+- ClawHub: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
 
 ## Mainline workflow
 
