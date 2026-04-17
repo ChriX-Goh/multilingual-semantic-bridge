@@ -81,6 +81,19 @@ That means:
 - the plugin helps the assistant notice when that discipline should come into play
 - the project does not pretend the plugin alone solves multilingual retrieval everywhere
 
+## How skill and plugin relate
+
+They are related, but not identical.
+
+- **skill-only** is valid: you still get the core bridge method
+- **plugin-only** is possible, but weaker: it can help detect bridge-worthy prompts early, but it is not the full method
+- **skill + plugin together** is the strongest current setup: the plugin catches the moment, and the skill carries the deeper reasoning/routing discipline
+
+So the cleanest public explanation is:
+- the **skill** is the foundation
+- the **plugin** is the convenience layer
+- they work best together, but they are not the same thing
+
 ## What makes it different
 
 This project is **not** mainly trying to be:

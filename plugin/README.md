@@ -4,6 +4,19 @@ This plugin is the lightweight automatic on-ramp for the broader Multilingual Se
 
 If the assistant sees a multilingual technical prompt that is probably bridge-worthy, this plugin can step in early and provide a tighter context style before the deeper skill takes over.
 
+## Relationship to the skill
+
+This plugin is best used together with the **Multilingual Semantic Bridge skill**.
+
+Plainly:
+- the **plugin** helps the assistant notice when bridging should start
+- the **skill** provides the fuller method for canonical intent, terminology bridging, and target-surface choice
+
+That means:
+- plugin-only can still be useful in simpler cases
+- but **plugin + skill together** is the intended stronger setup
+- this plugin should be understood as an accelerator, not a replacement for the skill
+
 ## Public project links
 - GitHub project: https://github.com/ChriX-Goh/multilingual-semantic-bridge
 - ClawHub skill page: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge

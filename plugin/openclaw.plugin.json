@@ -1,7 +1,7 @@
 {
   "id": "multilingual-semantic-bridge",
   "name": "Multilingual Semantic Bridge",
-  "description": "Narrow prompt-time automation layer for multilingual bridge activation.",
+  "description": "Automatic narrow on-ramp for multilingual bridge activation. Best used together with the Multilingual Semantic Bridge skill.",
   "activation": {
     "onCapabilities": ["hook"]
   },

@@ -17,6 +17,16 @@ Strong-fit targets include:
 - skill metadata
 - local operational files and runbooks
 
+## Relationship to the plugin
+
+This skill is the core bridge method.
+The plugin is the lighter automatic entry point.
+
+So:
+- this skill works on its own
+- the plugin can make activation more automatic
+- the strongest current setup is **skill + plugin together**
+
 Public links:
 - GitHub: https://github.com/ChriX-Goh/multilingual-semantic-bridge
-- ClawHub: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
+- ClawHub skill: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
