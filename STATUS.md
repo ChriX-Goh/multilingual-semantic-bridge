@@ -19,4 +19,8 @@
 - RC-tightening slice is complete, including a fresh isolated runtime spot-check and a compact RC checklist.
 
 ## Intended next step
-- shift into small release/publish packaging work, or explicitly choose the first post-v1 backlog slice.
+- protect the signed-off v1 baseline, finish release/publish surface stabilization, then open a bounded post-v1 backlog instead of continuing as short tactical fragments.
+
+## Long-horizon execution anchor
+- Long-range execution is now governed by `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`.
+- The project is now explicitly split into: release/publish lane, post-v1 product lane, and research/optionality lane.

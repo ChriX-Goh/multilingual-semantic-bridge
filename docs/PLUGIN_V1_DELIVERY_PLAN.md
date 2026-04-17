@@ -154,10 +154,10 @@ A plugin that only looks good on a local matrix is still too fragile to call v1-
 - Impact: medium-high
 - Mitigation: write the cooperation contract before adding richer prompt-time behavior
 
-### Risk D. GitHub continuity remains broken and silently stalls the project
-- Likelihood: high
+### Risk D. Scope re-inflation after signoff
+- Likelihood: medium
 - Impact: medium
-- Mitigation: keep it explicitly blocked in live task surfaces; do not pretend external continuity exists yet
+- Mitigation: do not convert post-v1 improvements into hidden v1 blockers after signoff
 
 ## 8. Suggested near-term cadence
 
@@ -168,9 +168,9 @@ A plugin that only looks good on a local matrix is still too fragile to call v1-
   - a clean next milestone
 
 ### Recommended next 3 sustained slices
-1. **Slice 1:** second isolated proof, preferably config/setup
-2. **Slice 2:** third isolated proof, preferably troubleshooting or docs/reference
-3. **Slice 3:** broaden matrix and write compact runtime-proof table
+1. **Slice 1:** small release/publish packaging work
+2. **Slice 2:** optional first post-v1 backlog item under explicit new scope
+3. **Slice 3:** only revisit broader benchmark expansion if it is consciously treated as post-v1 work
 
 ## 9. Definition of v1-ready
 
@@ -181,13 +181,18 @@ The plugin is v1-ready when all of these are true:
 - validation/debug path is documented and repeatable
 - plugin-skill cooperation is explicitly documented
 - packaging path is chosen
-- GitHub continuity is either repaired or explicitly carved out as the final blocker
+- GitHub continuity is real
+- one fresh post-tightening isolated runtime spot-check has succeeded
+- a compact RC/release-readiness checklist exists
 
 ## 10. Immediate next milestone
 
-Advance from "one isolated retrieval proof" to "multi-class live proof baseline."
+V1 readiness-building is complete within the documented narrow scope.
 
-Immediate next deliverables:
-- one config/setup live proof
-- one troubleshooting or docs/reference live proof
-- one compact table summarizing all proved intent classes and their runtime evidence
+Immediate next deliverables should now be one of:
+- small release/publish packaging work
+- explicit post-v1 backlog selection
+- or a deliberate pause with the current signoff preserved
+
+For sustained continuation after signoff, the governing execution surface is now:
+- `docs/PLUGIN_LONG_HORIZON_EXECUTION_PLAN_2026-04-17.md`
