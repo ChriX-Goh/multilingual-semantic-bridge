@@ -6,11 +6,11 @@ Decision type: readiness judgment, not release execution
 
 ## Executive judgment
 
-Current judgment: **not yet publish/release-ready, but close enough to justify a release-candidate-style tightening phase instead of another broad exploratory phase.**
+Current judgment: **v1-ready for narrow release/publish signoff.**
 
 Recommended next mode:
-- shift from broad capability-building into **RC tightening**
-- avoid opening new major capability branches unless they directly affect a remaining v1 gate
+- shift from readiness-building into small release/publish packaging work, or explicit post-v1 scope selection
+- avoid opening new major capability branches unless new contradictory evidence appears
 
 ## Gate review against the documented v1-ready criteria
 
@@ -56,15 +56,15 @@ Residual risk:
 - recent M3/M4 changes were locally validated, but not all have been followed by a fresh isolated runtime spot-check
 
 ### 4. Validation/debug path documented and repeatable
-Status: **PASS, with one tightening recommendation**
+Status: **PASS**
 
 Evidence:
 - current operator controls are explicit: `enabled`, `testTrigger`, `debug`
 - dedicated validation runbook exists: `docs/PLUGIN_VALIDATION_WORKFLOW_V1.md`
 - decision-layer and runtime-proof validation modes are separated clearly
 
-Tightening recommendation:
-- run one fresh post-M4/M5/M6 isolated runtime spot-check before calling the validation path fully battle-tested for the current code/docs state
+Fresh tightening result:
+- a new isolated post-tightening runtime spot-check was completed on 2026-04-17 UTC+8 against the bridgeproof profile and produced fresh hook-fire evidence
 
 ### 5. Plugin-skill cooperation explicitly documented
 Status: **PASS**
@@ -96,42 +96,29 @@ Evidence:
 - issue continuity restored through GitHub issue `#2`
 - recent checkpoints have been consistently pushed
 
-## What still blocks a stronger release/publish call
+## RC-tightening completion
 
-These are no longer architecture blockers, but they still block a stronger external-facing readiness call:
-
-### Blocker A — no fresh post-tightening isolated runtime spot-check
-The plugin has strong multi-class runtime proof, but the current post-M3/M4/M5/M6 state would benefit from one fresh isolated runtime spot-check so the final code/docs/control package is not justified only by older runtime evidence plus local validator green.
-
-### Blocker B — no explicit release-candidate checklist yet
-The repo has strong execution artifacts, but not yet a compact RC checklist saying:
-- what to verify before calling v1-ready
-- what remains intentionally out of scope
-- what evidence is enough for a publication/release judgment
+The remaining tightening slice has now been completed:
+- fresh isolated runtime spot-check completed
+- compact RC checklist written: `docs/PLUGIN_V1_RC_CHECKLIST_2026-04-17.md`
 
 ## Recommendation
 
 ### Recommended current label
-**V1 candidate, not final v1-ready signoff yet.**
-
-### Recommended next slice
-Do one focused RC-tightening slice only:
-1. run one fresh isolated runtime spot-check against the current code state
-2. write a compact RC checklist / release-readiness note
-3. then re-issue the final readiness judgment
+**V1-ready for narrow release/publish signoff.**
 
 ### What not to do next
-- do not open a new large capability branch
-- do not split the package boundary yet
-- do not expand into a much larger benchmark before the RC-tightening slice is done
+- do not reopen a new large capability branch under the name of v1 readiness
+- do not split the package boundary yet unless a new packaging goal appears
+- do not inflate the scope by treating post-v1 improvements as hidden v1 blockers
 
 ## Summary judgment
 
-The line is no longer in open-ended exploration.
-It has crossed into **candidate readiness**.
+The line is no longer merely in candidate readiness.
+It is now **ready enough to sign off within the documented narrow v1 scope**.
 
 Plainly:
 - architecture shape is good enough
 - evidence base is good enough
 - repo/continuity shape is good enough
-- but one last tightening slice is still warranted before making a stronger public/release-style claim
+- the remaining tightening slice has been completed
