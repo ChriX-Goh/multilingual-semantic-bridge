@@ -24,6 +24,13 @@ Default pattern:
 3. add English technical pivot only when it improves target matching
 4. keep exact identifiers verbatim
 
+## Plugin vs skill boundary
+- the plugin is the automatic narrow on-ramp
+- the skill remains the deeper bridge method
+- plugin alone is enough when the target class is already obvious and the case is straightforward once routed
+- the deeper skill discipline should dominate when target-surface arbitration or canonical-intent derivation is itself the main work
+- see `docs/PLUGIN_SKILL_COOPERATION_CONTRACT_V1.md`
+
 ## Non-goals
 This skill is not:
 - a per-language hard-coded rule pack

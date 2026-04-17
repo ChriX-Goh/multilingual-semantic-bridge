@@ -117,3 +117,14 @@ Older support material should not override this mainline.
 ## Standard of success
 
 The skill is succeeding when it helps the assistant find or route to the right technical target more reliably than naive same-surface wording alone.
+
+## Relationship to the plugin
+
+The plugin is the automatic narrow on-ramp.
+This skill remains the deeper method.
+
+Use the plugin as the first lightweight bridge layer when the target class is already fairly obvious.
+Use the fuller skill discipline when the real work is target-surface arbitration, canonical-intent derivation, or reusable terminology mapping.
+
+See:
+- `docs/PLUGIN_SKILL_COOPERATION_CONTRACT_V1.md`

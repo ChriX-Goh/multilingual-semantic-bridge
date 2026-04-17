@@ -74,7 +74,8 @@ Definition:
 - no silent philosophical drift between plugin and skill layers
 
 Current state:
-- conceptual direction exists, but contract is not yet crisp
+- now made explicit in `docs/PLUGIN_SKILL_COOPERATION_CONTRACT_V1.md`
+- plugin-alone vs skill-dominant cases are now described as an operational decision rule rather than only a conceptual preference
 
 ### M6. Packaging and continuity readiness
 Definition:

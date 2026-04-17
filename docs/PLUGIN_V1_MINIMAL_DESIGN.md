@@ -64,6 +64,9 @@ The plugin should activate only when at least one of these is true:
 
 The intended model is **cooperative, not replacement**.
 
+This design note is now backed by the explicit contract at:
+- `docs/PLUGIN_SKILL_COOPERATION_CONTRACT_V1.md`
+
 ### What the plugin should do
 - run automatically at prompt-build time when the activation conditions are met
 - add a compact bridge context block
