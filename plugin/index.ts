@@ -1,3 +1,8 @@
+/*
+ * Copyright 2026 ChriX Goh
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { buildBridgeContext, decideBridgeActivation } from "./logic";
 

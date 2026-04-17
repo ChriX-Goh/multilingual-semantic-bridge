@@ -1,3 +1,8 @@
+/*
+ * Copyright 2026 ChriX Goh
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 export const cases = [
   { id: 'T01', prompt: 'bridge-plugin-test openclaw plugin 怎么设置', expected: true, style: 'setup_mapping' },
   { id: 'T02', prompt: '怎么让 OpenClaw 的 memory search 更容易命中中文说法？', expected: true, style: 'history_recall' },

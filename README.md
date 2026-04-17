@@ -90,3 +90,19 @@ The current signed-off v1 shape is:
 
 This repo does not claim that multilingual retrieval is solved in every setting.
 It does claim that the current narrow v1 package is coherent, inspectable, and backed by real runtime evidence.
+
+## License and attribution
+
+This repository is now licensed under **Apache-2.0**.
+
+Practical meaning:
+- others may use, modify, and redistribute the work under Apache-2.0 terms
+- they must retain the required license and attribution notices
+- modified files must carry prominent modification notices as required by Apache-2.0
+- the license does **not** grant trademark rights
+
+Repo-level attribution surfaces:
+- `LICENSE`
+- `NOTICE`
+
+If later you want stronger brand protection around the project name itself, that is a separate trademark/branding question, not something the open-source license solves by itself.

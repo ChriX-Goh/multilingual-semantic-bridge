@@ -1,3 +1,8 @@
+/*
+ * Copyright 2026 ChriX Goh
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 export const DEFAULT_TEST_TRIGGER = "bridge-plugin-test";
 export const ENGLISH_TECH_TERMS = [
   "openclaw",

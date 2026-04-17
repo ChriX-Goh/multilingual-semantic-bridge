@@ -1,3 +1,8 @@
+/*
+ * Copyright 2026 ChriX Goh
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { decideBridgeActivation } from '../plugin/logic.ts';
 import { cases } from './plugin-case-matrix-cases.mjs';
 

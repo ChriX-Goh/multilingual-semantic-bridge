@@ -19,7 +19,7 @@
 - RC-tightening slice is complete, including a fresh isolated runtime spot-check and a compact RC checklist.
 
 ## Intended next step
-- protect the signed-off v1 baseline and continue with bounded post-v1 slices instead of drifting back into tactical fragments.
+- protect the signed-off v1 baseline, continue with bounded post-v1 slices, and follow the short-horizon execution order captured in `docs/NEXT_PHASE_EXECUTION_SEQUENCE_2026-04-18.md`.
 
 ## Post-v1 backlog anchor
 - The explicit post-v1 backlog surface is now `docs/PLUGIN_POST_V1_BACKLOG.md`.
