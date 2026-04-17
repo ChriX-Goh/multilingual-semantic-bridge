@@ -107,27 +107,22 @@ export function contextStyleForIntent(intent: BridgeIntent): ContextStyle {
 export function buildBridgeContext(intent: BridgeIntent, contextStyle: ContextStyle, reasons: string[]): string {
   const styleLines: Record<ContextStyle, string[]> = {
     history_recall: [
-      "Likely task class: retrieval/recall.",
       "Start with memory, prior notes, runbooks, and exact historical anchors.",
-      "If the target may be an artifact rather than a memory, route to the artifact after canonicalizing the query.",
+      "If the target may be an artifact, route there after canonicalizing the query.",
     ],
     setup_mapping: [
-      "Likely task class: configuration/setup.",
       "Map the user's wording onto exact config keys, CLI/config surfaces, and auth field names.",
       "Prefer official docs/schema names before local paraphrase.",
     ],
     upstream_reference: [
-      "Likely task class: official docs/reference lookup.",
       "Favor upstream docs, manifests, SDK names, and exact entry points.",
-      "Use the English technical pivot mainly to improve target selection, not to replace the user's wording.",
+      "Use the technical pivot to improve target selection, not to replace the user's wording.",
     ],
     symptom_diagnosis: [
-      "Likely task class: troubleshooting/error diagnosis.",
-      "Preserve the symptom wording, identify the technical target, and prefer evidence-backed cause paths.",
-      "Separate the error text, target subsystem, and likely official/debug surfaces.",
+      "Preserve the symptom wording and identify the technical target.",
+      "Prefer evidence-backed cause paths and likely official/debug surfaces.",
     ],
     generic_bridge: [
-      "Likely task class: multilingual technical routing.",
       "Preserve wording and derive canonical intent before retrieval.",
       "Choose the target surface by target class instead of defaulting to memory-first.",
     ],
@@ -135,15 +130,12 @@ export function buildBridgeContext(intent: BridgeIntent, contextStyle: ContextSt
 
   return [
     "<multilingual_semantic_bridge_plugin>",
-    "A multilingual bridge pre-pass has been activated for this turn.",
     `Activation reasons: ${reasons.join('; ')}`,
     `Bridge intent: ${intent}`,
     `Context style: ${contextStyle}`,
-    "Preserve the user's original wording.",
-    "Derive canonical intent before retrieval or routing.",
+    "Preserve original wording and derive canonical intent first.",
     "Use a technical pivot only when the likely target surface is English-heavy.",
     ...styleLines[contextStyle],
-    "Keep the bridge compact and evidence-oriented.",
     "</multilingual_semantic_bridge_plugin>",
   ].join("\n");
 }

@@ -141,6 +141,24 @@ Recommended next pick after this:
 - stay in Bucket A
 - next best choices are either one compactness/noise-trimming slice or a narrower class-fit refinement between retrieval and troubleshooting edges
 
+## 3C. Completed third bounded slice
+
+Completed on 2026-04-18 UTC+8:
+- Bucket: Utility hardening
+- Question: is the injected bridge block still slightly overlong or repetitive across intent classes?
+- Expected evidence: a shorter bridge block with matrix stability preserved
+- Result: completed
+
+What changed:
+- removed repeated boilerplate from `buildBridgeContext`
+- reduced redundancy between generic bridge instructions and intent-specific lines
+- preserved class guidance while making the injected block leaner and less repetitive
+- compact validator remained green at 32/32
+
+Recommended next pick after this:
+- stay in Bucket A
+- next best choice is a narrower retrieval-vs-troubleshooting class-fit refinement on ambiguous edge prompts
+
 ## 4. What should not be picked next by default
 
 Do not pick these first unless a stronger reason appears:
