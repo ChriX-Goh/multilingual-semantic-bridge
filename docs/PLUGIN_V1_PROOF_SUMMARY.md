@@ -35,9 +35,9 @@ Key surfaces:
 - `docs/PLUGIN_CASE_MATRIX_V1.md`
 
 Current compact matrix state:
-- broader curated M3 pass completed
-- 26 documented cases
-- includes Mandarin, mixed-language prompts, more colloquial/Cantonese-style phrasing, and non-trigger near-misses
+- broader curated M3 plus A4 class-fit refinement completed
+- 36 documented cases
+- includes Mandarin, mixed-language prompts, more colloquial/Cantonese-style phrasing, non-trigger near-misses, and ambiguous history-vs-current-issue prompts
 
 ### 2. Runtime proof across multiple intent classes
 The plugin was not signed off based only on local harness success.

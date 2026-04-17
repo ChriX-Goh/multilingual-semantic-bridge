@@ -1,10 +1,10 @@
 # Multilingual Semantic Bridge — Public Description
 
 ## One-line description
-A skill that helps non-English or mixed-language user requests hit the right English-heavy technical targets more reliably.
+A bridge package that helps non-English or mixed-language technical requests hit the right English-heavy technical targets more reliably.
 
 ## Short description
-Multilingual Semantic Bridge is a cross-lingual retrieval and routing skill for technical environments where user phrasing and system terminology do not naturally live in the same language.
+Multilingual Semantic Bridge is a cross-lingual retrieval and routing bridge package for technical environments where user phrasing and system terminology do not naturally live in the same language.
 
 Instead of acting like a generic translator, it helps the assistant:
 - preserve the original user wording
@@ -47,4 +47,4 @@ This project now has a signed-off **narrow v1** baseline:
 - the plugin provides an automatic narrow on-ramp for bridge-worthy multilingual technical prompts
 
 The claim is not that multilingual retrieval is universally solved.
-The claim is that this v1 package is already useful, inspectable, and supported by real validation evidence.
+The claim is that this narrow v1 package is already coherent, useful, inspectable, and supported by real validation evidence.

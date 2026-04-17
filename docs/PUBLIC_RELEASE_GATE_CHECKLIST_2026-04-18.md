@@ -42,11 +42,11 @@ Current note:
 - [x] public description exists
 - [x] usage/boundaries doc exists
 - [x] README reflects the core project shape
-- [ ] README, public description, proof summary, and status read as one coherent public story
+- [x] README, public description, proof summary, and status now share the same narrow-v1 package framing
 - [ ] no major contradiction remains between release-facing docs and current status
 
 Current note:
-- the major pieces exist, but one more coherence pass is still warranted
+- framing coherence improved, but one more contradiction check is still warranted
 
 ### C. Product readiness and evidence
 - [x] narrow v1 signoff exists
