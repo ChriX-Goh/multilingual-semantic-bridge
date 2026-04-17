@@ -1,4 +1,4 @@
-# Multilingual Semantic Bridge — Public Description Draft
+# Multilingual Semantic Bridge — Public Description
 
 ## One-line description
 A skill that helps non-English or mixed-language user requests hit the right English-heavy technical targets more reliably.
@@ -40,3 +40,11 @@ This skill helps connect those two worlds without reducing the workflow to a lan
 ## Boundary
 This skill improves retrieval/routing discipline.
 It does not by itself guarantee better embeddings, perfect multilingual reasoning, or automatic backend-level retrieval upgrades.
+
+## Current public framing
+This project now has a signed-off **narrow v1** baseline:
+- the skill carries the deeper bridge method
+- the plugin provides an automatic narrow on-ramp for bridge-worthy multilingual technical prompts
+
+The claim is not that multilingual retrieval is universally solved.
+The claim is that this v1 package is already useful, inspectable, and supported by real validation evidence.

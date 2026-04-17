@@ -37,18 +37,19 @@ This skill helps connect those two worlds without collapsing the workflow into a
 - `plugin/` — phase-2 pluginization package
 - `scripts/` — compact validator/support scripts for plugin decision-layer checks
 - `dist/multilingual-semantic-bridge.skill` — packaged artifact snapshot
-- `docs/RELEASE_NOTE.md` — first stable release note
+- `docs/RELEASE_NOTE.md` — signed-off narrow v1 release note
+- `docs/PLUGIN_V1_PROOF_SUMMARY.md` — compact proof summary for the signed-off plugin baseline
 - `docs/USAGE_AND_BOUNDARIES.md` — where the skill helps and where it does not
 - `docs/PUBLIC_DESCRIPTION.md` — short public-facing description
 - `STATUS.md` — current maturity and checkpoint summary
 
 ## Current project status
 
-- Whole-project progress: ~94%
-- Current mainline: phase-2 pluginization through M6 packaging/continuity readiness
-- Stable current conclusion: the bridge already improves retrieval/routing quality, but current builtin-memory evidence is best described as **memory-mediated target concentration** rather than a blanket claim of direct artifact retrieval in every surface.
-- Pluginization status: multi-class runtime proof baseline exists, broader curated coverage exists, operator controls/validation workflow are documented, and the plugin-skill cooperation contract is explicit.
-- GitHub continuity is repaired and tracked again via issue `#2`.
+- Whole-project progress: ~96%
+- Current mainline: signed-off narrow v1 baseline, followed by release/publish surface stabilization
+- Stable current conclusion: the bridge already improves retrieval/routing quality, and the pluginized on-ramp is now evidenced strongly enough for narrow v1 signoff.
+- Pluginization status: multi-class runtime proof baseline exists, broader curated coverage exists, operator controls/validation workflow are documented, the plugin-skill cooperation contract is explicit, and RC tightening is complete.
+- GitHub continuity is repaired and tracked via issue `#2`.
 
 ## Scope boundary
 
@@ -75,8 +76,17 @@ Choose the retrieval surface by target class:
 
 ## Packaging note
 
-This repo is currently arranged as a clean GitHub/project boundary for the skill, the phase-2 plugin package, and the shared validation/boundary docs that still evolve together.
+This repo is currently arranged as a clean GitHub/project boundary for the skill, the narrow v1 plugin package, and the shared validation/boundary docs that still evolve together.
 
 Current v1 decision:
 - keep the plugin as a sibling package inside this repo for now
-- do not split into a separate repo/package until the packaging boundary is more stable and less coupled to the shared bridge method/docs
+- do not split into a separate repo/package until real post-v1 usage justifies a cleaner separation
+
+## Signed-off v1 framing
+
+The current signed-off v1 shape is:
+- **skill** = deeper bridge method and richer retrieval/routing discipline
+- **plugin** = automatic narrow on-ramp for bridge-worthy multilingual technical prompts
+
+This repo does not claim that multilingual retrieval is solved in every setting.
+It does claim that the current narrow v1 package is coherent, inspectable, and backed by real runtime evidence.
