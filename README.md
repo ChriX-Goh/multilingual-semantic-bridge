@@ -1,6 +1,6 @@
 # Multilingual Semantic Bridge
 
-A skill that helps non-English or mixed-language technical requests hit the right English-heavy technical targets more reliably.
+A bridge package that helps non-English or mixed-language technical requests hit the right English-heavy technical targets more reliably.
 
 ## What it is
 

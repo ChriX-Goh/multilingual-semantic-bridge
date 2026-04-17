@@ -48,3 +48,5 @@
 - Explicit first ClawHub publication-unit decision now exists at `docs/CLAWHUB_PUBLICATION_UNIT_DECISION_2026-04-18.md`.
 - Tranche-end re-judgment is recorded at `docs/RELEASE_GATE_REJUDGMENT_2026-04-18.md`.
 - Immediate next move is no longer foundational cleanup; it is final pre-execution verification before any outward action.
+- Pre-execution verification is now defined at `docs/PRE_EXECUTION_VERIFICATION_CHECKLIST_2026-04-18.md`.
+- Skill-facing publication copy/metadata draft is now staged at `docs/SKILL_PUBLICATION_METADATA_DRAFT_2026-04-18.md`.

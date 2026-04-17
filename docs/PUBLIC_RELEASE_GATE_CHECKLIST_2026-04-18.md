@@ -99,7 +99,7 @@ To move from NOT YET GO toward GO-CANDIDATE, complete these first:
 ## 5. Next recommended slice
 
 Best next slice:
-- finish the remaining public-facing classification cleanup and then run the public-story coherence pass
+- move into pre-execution verification using `docs/PRE_EXECUTION_VERIFICATION_CHECKLIST_2026-04-18.md`, then execute outward actions only with user approval at that time
 
 ## 6. Decision standard
 
