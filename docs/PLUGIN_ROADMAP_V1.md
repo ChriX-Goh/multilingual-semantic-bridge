@@ -54,9 +54,13 @@ Work items:
 Current checkpoint:
 - intent-aware context styles now exist in the plugin for retrieval, config, docs, troubleshooting, and generic bridge routing
 - injected context now carries both `Bridge intent` and `Context style` instead of using one generic post-trigger block
-- isolated live runtime proof is now captured on an explicit pinned gateway path (`ws://127.0.0.1:19031`) using session `bridgeproof-runtime-v1`
-- gateway evidence showed `before_prompt_build`, `multilingual bridge hook fired`, and prompt mutation via `prependSystemContext/appendSystemContext (689+0 chars)` before model submission
-- next validation focus is broadening runtime proof beyond the test-trigger case while keeping the injected block compact and correctly matched to prompt class
+- isolated live runtime proof is now captured on an explicit pinned gateway path (`ws://127.0.0.1:19031`) across multiple sessions, not just one retrieval sample
+- confirmed live proof classes now include:
+  - retrieval / history recall via `bridgeproof-runtime-v1`
+  - config / setup via `bridgeproof-config-v1`
+  - troubleshooting via `bridgeproof-troubleshooting-v1` (useful but slightly weaker because that run had a gateway-close wrinkle before embedded fallback)
+- strongest gateway evidence still includes `before_prompt_build`, `multilingual bridge hook fired`, and prompt mutation via `prependSystemContext/appendSystemContext` before model submission
+- next validation focus is filling one more strong non-retrieval proof without the fallback wrinkle, then tightening compactness and prompt-class fit before expanding coverage
 
 Exit criteria:
 - prompt-context classes documented
@@ -154,8 +158,8 @@ Mitigation: keep local repo discipline, but explicitly carry GitHub repair as a 
 Start Phase B now.
 
 Concrete next slice:
-- add at least one more isolated live runtime proof beyond the test-trigger retrieval case, ideally covering config or troubleshooting
-- record compact runtime-proof notes that show the chosen style for each proved trigger class
-- tighten any remaining intent misclassification before expanding multilingual coverage
+- upgrade the troubleshooting sample from a weaker fallback-tinged proof into a clean strong proof, or add a third strong class such as docs/reference
+- record a compact runtime-proof table that shows the chosen style for each proved trigger class
+- tighten any remaining compactness/noise issues before expanding multilingual coverage
 
 This remains the highest-value next move because it upgrades the plugin from "fires correctly" to "helps correctly."

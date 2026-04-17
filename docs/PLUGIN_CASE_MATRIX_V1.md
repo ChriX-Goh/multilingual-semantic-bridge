@@ -85,9 +85,13 @@ Latest local style-mapping check:
 
 ## Runtime proof note (2026-04-17, isolated gateway)
 
-An isolated live runtime proof was completed on a pinned gateway target `ws://127.0.0.1:19031` using session `bridgeproof-runtime-v1`.
-The exercised prompt was:
+Isolated live runtime proofs were completed on the pinned gateway target `ws://127.0.0.1:19031`.
 
+### Proof 1, retrieval / history recall
+Session:
+- `bridgeproof-runtime-v1`
+
+Prompt:
 - `bridge-plugin-test 为什么 openclaw memory search 老是搜不到我之前写的中文记录？`
 
 Observed gateway evidence:
@@ -98,7 +102,41 @@ Observed gateway evidence:
 Interpretation:
 - trigger path fired in a real embedded agent run, not only in the local harness
 - the injected block was applied before model submission
-- this runtime-proof sample corresponds to retrieval failure around history, so the expected live context style remains `history_recall`
+- this sample corresponds to retrieval failure around history, so the expected live context style remains `history_recall`
+
+### Proof 2, config / setup mapping
+Session:
+- `bridgeproof-config-v1`
+
+Prompt:
+- `bridge-plugin-test 如何在 OpenClaw 里设置 plugin 的 config key？`
+
+Observed gateway evidence:
+- `[plugins] [hooks] running before_prompt_build (1 handlers, sequential)`
+- `[plugins] multilingual bridge hook fired`
+- `[agent/embedded] hooks: applied prependSystemContext/appendSystemContext (656+0 chars)`
+- repeated gateway tool calls: `config.schema.lookup`
+
+Interpretation:
+- the plugin again fired in a real embedded run on the pinned isolated gateway
+- this time the downstream answer shape actually aligned with config/setup work by using `config.schema.lookup` during the run, not just generic explanation
+- this sample is now a real isolated proof for the `setup_mapping` class
+
+### Proof 3, troubleshooting / symptom diagnosis
+Session:
+- `bridgeproof-troubleshooting-v1`
+
+Prompt:
+- `bridge-plugin-test 为什么 OpenClaw 插件里总是报 token 错误？`
+
+Observed runtime evidence:
+- `[plugins] multilingual bridge hook fired`
+- final answer centered on auth mismatch diagnosis, gateway URL mismatch, auth mode mismatch, and token-source drift
+
+Interpretation:
+- even though this run returned through embedded fallback after a gateway close (`1006 abnormal closure`), the pinned run still produced plugin-hook evidence and a troubleshooting-shaped answer
+- treat this as a useful but slightly weaker proof than the first two because the gateway-close wrinkle should still be explained/cleaned up later
+- current live evidence now extends beyond retrieval into both config/setup and troubleshooting-oriented prompt classes
 
 ## Next use
 
