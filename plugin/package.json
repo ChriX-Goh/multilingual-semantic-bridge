@@ -1,6 +1,7 @@
 {
   "name": "@chrix/openclaw-multilingual-semantic-bridge-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "Automatic trigger layer for non-English-first technical prompts, helping assistants use semantic/vector retrieval more effectively by activating the Multilingual Semantic Bridge workflow earlier.",
   "type": "module",
   "private": false,
   "license": "Apache-2.0",

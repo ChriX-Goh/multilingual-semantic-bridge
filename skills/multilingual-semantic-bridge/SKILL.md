@@ -1,6 +1,6 @@
 ---
 name: multilingual-semantic-bridge
-description: Help multilingual users reach the right English-heavy technical target, not just a translated version of the question. Use this when the user asks in non-English or mixed-language wording, but the best answer is easier to find through English-heavy docs, config keys, commands, skill metadata, logs, or local technical files.
+description: Help non-English-first users hit the right technical answer when docs, memory, configs, skills, and runbooks are stored under English-heavy names. This bridge improves semantic/vector retrieval usage by shaping better multilingual-to-technical target matching, without claiming to replace the retrieval engine itself.
 ---
 
 # Multilingual Semantic Bridge
