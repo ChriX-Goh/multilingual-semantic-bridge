@@ -1,32 +1,52 @@
 # Multilingual Semantic Bridge
 
-Help multilingual users reach the right technical target, not just a translated version of the question.
+A bridge for **non-English-first users** who are talking naturally, but still missing the right answer because technical systems store that answer under English-heavy names.
 
-This skill is designed for a common technical mismatch:
-- the user asks naturally in one language
-- the best answer is named in another language, often English-heavy technical terminology
-- the assistant needs help connecting the two
+## What problem does this skill solve?
 
-It works by preserving the user's original wording, recovering canonical intent, generating a stronger technical pivot when useful, and routing toward the most likely target surface.
+This skill helps when:
+- the user asks clearly in their own language
+- the answer already exists somewhere in the system
+- but memory, docs, config, skills, or runbooks are indexed under different English-heavy terminology
 
-Strong-fit targets include:
-- official docs
-- config keys
-- provider names
-- CLI commands
-- skill metadata
-- local operational files and runbooks
+That mismatch can cause missed hits even when the system already has the knowledge.
+
+## Example user languages
+This skill is especially relevant for multilingual users working in languages such as:
+- Chinese
+- Cantonese
+- Japanese
+- Korean
+- Spanish
+- Arabic
+- Hindi
+
+## What this skill does
+
+This skill is the **core bridge method**.
+It helps the assistant:
+- preserve the user's original wording
+- recover canonical intent
+- generate a better technical pivot when useful
+- route toward the most likely technical target
 
 ## Relationship to the plugin
 
-This skill is the core bridge method.
 The plugin is the lighter automatic entry point.
+This skill is the deeper method.
 
 So:
 - this skill works on its own
 - the plugin can make activation more automatic
 - the strongest current setup is **skill + plugin together**
 
-Public links:
+## Where vector retrieval fits
+
+This skill is highly relevant to systems using semantic search, vector retrieval, and memory retrieval.
+But it is important to describe it correctly:
+- this skill is **not** the vector database itself
+- it is the bridge layer that helps retrieval hit the right target more often
+
+## Public links
 - GitHub: https://github.com/ChriX-Goh/multilingual-semantic-bridge
 - ClawHub skill: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge

@@ -5,98 +5,89 @@
 
 ## At a glance
 
-Multilingual Semantic Bridge v1 is the first clean public cut of a simple idea:
+Multilingual Semantic Bridge v1 is the first public cut of a very practical idea:
 
-**When users ask in one language, but the answer is named in another, the assistant should still be able to find the right thing.**
+**Non-English-first users should not lose good answers just because technical systems still store those answers under English-heavy names.**
 
-This release packages that idea into:
-- a deeper **skill** for multilingual retrieval and routing discipline
-- a narrow **plugin** on-ramp that helps catch bridge-worthy multilingual technical prompts automatically
+This release introduces a bridge layer that helps assistants retrieve and route more effectively across multilingual wording and English-heavy technical targets.
 
 Public pages:
 - GitHub: https://github.com/ChriX-Goh/multilingual-semantic-bridge
-- ClawHub: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
+- ClawHub skill: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
 
-## The problem this release tackles
+## The real problem
 
-In real technical environments, users often ask naturally, but the answer is stored unnaturally.
+In many assistant systems, the answer already exists.
+But the system still misses it because:
+- the user asks in a non-English-first way
+- the useful target is named in English-heavy technical terminology
+- retrieval does not connect those two cleanly enough
 
-The user might write in Chinese, Cantonese, or mixed language.
-The system might store the important target under English-heavy names like:
-- config keys
-- provider names
-- CLI commands
-- doc titles
-- skill metadata
-- logs or operational docs
+That can affect:
+- memory recall
+- docs lookup
+- config search
+- skill discovery
+- runbook targeting
+- troubleshooting against logs and exact technical terms
 
-That mismatch creates missed hits, weak routing, and a lot of unnecessary assistant confusion.
+## Example user languages
 
-## What this version does
+This project is designed for multilingual environments and is especially relevant when the user's natural conversation language is not English.
+
+Example prompt languages include:
+- Chinese
+- Cantonese
+- Japanese
+- Korean
+- Spanish
+- Arabic
+- Hindi
+
+## What this release does
 
 This version gives the assistant a practical bridge workflow:
 1. preserve the original input
 2. recover the actual intent
-3. generate a stronger technical pivot when needed
+3. generate a better technical pivot when useful
 4. connect user wording with official terminology
 5. route toward the right answer surface
 
-That answer surface may be:
-- memory
-- official docs
-- a skill
-- a local file or runbook
-- an exact technical artifact such as a command, path, or config key
+## Where vector retrieval fits
 
-## Why this release is useful
+This release is highly relevant to systems that use:
+- vector databases
+- semantic search
+- memory retrieval
+- retrieval over docs, skills, configs, and local files
 
-This release matters because it addresses a very common failure mode without pretending to solve everything.
+But the correct claim is:
+- this project is **not** the vector database itself
+- it is the bridge layer that helps the assistant use retrieval more effectively
 
-It does **not** say:
-- translate everything
-- rewrite everything into English
-- trust memory for everything
-- guess based on vibes
+It improves the path between:
+- user wording
+- retrieval query shape
+- target-surface choice
+- final answer location
 
-Instead, it says:
-- preserve the original meaning
-- use a technical pivot only when it helps
-- choose the right target surface deliberately
-- keep exact identifiers exact
+## Skill and plugin
 
-## What evidence supports this cut
+The current release shape is:
+- **skill** = the core bridge method
+- **plugin** = the lighter automatic entry point
 
-This release is supported by more than design preference.
-It is backed by:
-- trigger and style-matrix validation
-- isolated runtime proof across history recall
-- isolated runtime proof across config and setup
-- isolated runtime proof across troubleshooting
-- isolated runtime proof across docs and upstream reference
-- explicit validation workflow and plugin-skill boundary documentation
+Best current setup:
+- skill-only works
+- plugin-only is weaker
+- **skill + plugin together** is strongest
 
-## Honest boundaries
+## Honest boundary
 
 This release does **not** claim that:
 - multilingual retrieval is solved in every environment
 - every language/domain pair will benefit equally
-- backend retrieval quality is magically upgraded by this package alone
+- the underlying vector store has been fundamentally upgraded
 - the plugin replaces the deeper skill method
 
-This is a strong first release, not a final theory of multilingual technical assistance.
-
-## Practical framing
-
-The current v1 shape is intentionally clear:
-- **skill** = the deeper method
-- **plugin** = the lightweight automatic entry point
-
-That makes the project easier to inspect, safer to roll back, and easier to improve in bounded steps.
-
-## Likely next phase
-
-Post-v1 work should focus on:
-- broader evaluation sets
-- harder multilingual edge cases
-- more examples of plugin-only vs plugin-plus-skill behavior
-- further utility hardening where evidence shows real value
+This is a bridge layer that makes existing retrieval and routing systems easier to use well across language mismatch.

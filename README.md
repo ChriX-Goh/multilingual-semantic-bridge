@@ -1,158 +1,174 @@
 # Multilingual Semantic Bridge
 
-Help multilingual users hit the **right technical target**, not just get a translation.
+A bridge for **non-English-first users** who keep asking clear questions, but still fail to hit the right technical answer because the system stores that answer under English-heavy names.
 
-If someone asks in Chinese, Cantonese, mixed Chinese-English, or other non-English phrasing, but the real target lives in English-heavy technical surfaces like docs, config keys, CLI commands, skill metadata, logs, or runbooks, this project helps the assistant bridge that gap more reliably.
+## What pain point does this solve?
 
-## Quick links
+This project solves a very practical problem:
 
-- GitHub: https://github.com/ChriX-Goh/multilingual-semantic-bridge
-- ClawHub skill: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
-- Release note: `docs/RELEASE_NOTE.md`
-- Usage and boundaries: `docs/USAGE_AND_BOUNDARIES.md`
-- Current status: `STATUS.md`
+A user asks naturally in their own language.
+The assistant system, docs, config, commands, logs, skills, and memory surfaces are still heavily English-shaped.
+So even when the answer already exists, retrieval often misses it.
 
-## Why this matters
+That usually looks like this:
+- the user describes the problem correctly
+- the useful target is stored under a different technical name
+- vector search or keyword search does not hit the best result
+- the assistant searches the wrong memory, wrong docs page, wrong file, or wrong tool
+- the user feels like the system is "not understanding", even though the knowledge is actually there
 
-A lot of real technical environments are still English-heavy.
-Users are not.
+This project is meant to reduce that failure mode.
 
-That mismatch causes a very common failure mode:
-- the user describes the problem naturally
-- the important target is named differently
-- the assistant searches the wrong surface, or searches the right surface with the wrong words
-- good docs, memory, skills, or local runbooks stay effectively invisible
+## Who is this for?
 
-This project is built to reduce that gap.
+This project is especially for **users whose first conversation language is not English**, but who are using assistant systems built on English-heavy technical infrastructure.
 
-## What this project does
+That includes people who mainly work in languages such as:
+- Chinese
+- Cantonese
+- Japanese
+- Korean
+- Spanish
+- Arabic
+- Hindi
+- Thai
+- Vietnamese
+- Indonesian
 
-Multilingual Semantic Bridge helps an assistant:
-1. keep the user's original wording
-2. identify the real intent behind the wording
-3. generate a better technical pivot when needed
-4. connect user language with official terminology
-5. route toward the right target surface
+It is not limited to those languages, but the target user is clear:
+**people who think and ask naturally in a non-English-first way, while the system underneath is still named and organized mostly in English.**
 
-In plain terms, it helps the assistant go from:
-- "what the user said"
+## Example user prompts
 
-to:
-- "what they actually need"
-- "what this thing is called in the system"
-- "where the best answer probably lives"
+These are the kinds of prompts this project is trying to help with:
 
-## What problem it solves
+- Chinese: `OpenClaw 怎么找回我之前写的记录？`
+- Cantonese: `我个 repo 点解喺 OpenClaw 入面搵唔到？`
+- Japanese: `OpenClawで前のメモをどう探せばいいですか？`
+- Korean: `model key는 어디서 설정하나요?`
+- Spanish: `¿Por qué no encuentro mi skill en OpenClaw?`
+- Arabic: `أين أضبط مفتاح النموذج؟`
+- Hindi: `OpenClaw में मेरी पुरानी notes क्यों नहीं मिल रही हैं?`
 
-This is especially useful when the user says something like:
-- "OpenClaw 点样搵返我之前啲记录？"
-- "我个 repo 点解喺 OpenClaw 入面搵唔到？"
-- "喺边度设 model key？"
-
-while the real answer may depend on English-heavy targets such as:
+The real answer might live under English-heavy technical targets like:
 - official documentation pages
 - config paths and field names
 - provider names
 - CLI commands
 - skill metadata
-- operational docs and troubleshooting notes
+- logs
+- local runbooks
+- memory entries with different wording
 
-Instead of flattening everything into a generic translation workflow, the bridge tries to recover the right technical target.
+## What this project actually does
 
-## What is in this repo
+Multilingual Semantic Bridge helps an assistant go from:
+- what the user said
 
-- `skills/multilingual-semantic-bridge/` — the main skill, and the current first public publication unit
-- `plugin/` — the narrow plugin on-ramp for bridge-worthy multilingual technical prompts
+to:
+- what the user actually means
+- what that thing is called in the system
+- where the best answer probably lives
+
+In practice, it helps the assistant:
+1. keep the user's original wording
+2. recover the real intent behind the wording
+3. generate a better technical pivot when useful
+4. connect user language with official terminology
+5. route toward the right target surface
+
+## Where vector retrieval fits
+
+Yes, this project is closely related to **vector retrieval**, **memory retrieval**, and **semantic search**.
+
+The cleanest way to describe it is:
+
+- the vector database or retrieval system is the **engine**
+- this bridge is part of the **steering and query-shaping layer**
+
+In other words:
+- it does **not** replace the vector database
+- it does **not** claim to improve embeddings by magic
+- it does **not** rewrite the storage layer itself
+- it **does** help the assistant ask better retrieval questions and choose better retrieval targets
+
+That matters because many retrieval misses are not caused by the database being empty.
+They are caused by the query and the stored target not lining up well enough across languages, terminology, and technical naming.
+
+So the practical value here is:
+- better multilingual query shaping
+- better target matching
+- better retrieval-surface selection
+- better use of existing memory/docs/vector infrastructure
+
+## What is in this repo?
+
+- `skills/multilingual-semantic-bridge/` — the main skill, and the first public skill release
+- `plugin/` — the narrow plugin on-ramp for automatic bridge activation
 - `scripts/` — validation helpers and case-matrix support scripts
 - `dist/multilingual-semantic-bridge.skill` — packaged artifact snapshot
-- `docs/RELEASE_NOTE.md` — signed-off narrow v1 release note
+- `docs/RELEASE_NOTE.md` — release note
 - `docs/USAGE_AND_BOUNDARIES.md` — practical fit and non-fit cases
 - `docs/PUBLIC_DESCRIPTION.md` — short public-facing description
 - `STATUS.md` — maturity and checkpoint summary
 
-## Current release shape
+## Skill vs plugin, in plain language
 
-The current signed-off shape is intentionally simple:
-- **skill** = the deeper method
-- **plugin** = the automatic narrow on-ramp
+This project currently has two public parts:
 
-That means:
-- the skill carries the real bridge discipline
-- the plugin helps the assistant notice when that discipline should come into play
-- the project does not pretend the plugin alone solves multilingual retrieval everywhere
+### 1. The skill
+The **skill** is the main method.
+It contains the deeper bridge logic:
+- canonical intent
+- terminology bridging
+- retrieval-surface choice
+- routing discipline
 
-## How skill and plugin relate
+### 2. The plugin
+The **plugin** is the lighter automatic trigger.
+It helps the assistant notice early that a multilingual technical prompt may need the bridge.
 
-They are related, but not identical.
+### Best way to think about them
+- **skill-only** works
+- **plugin-only** can help, but is weaker
+- **skill + plugin together** is the strongest current setup
 
-- **skill-only** is valid: you still get the core bridge method
-- **plugin-only** is possible, but weaker: it can help detect bridge-worthy prompts early, but it is not the full method
-- **skill + plugin together** is the strongest current setup: the plugin catches the moment, and the skill carries the deeper reasoning/routing discipline
+So the short version is:
+- the **skill** is the core solution
+- the **plugin** makes that solution kick in more automatically
 
-So the cleanest public explanation is:
-- the **skill** is the foundation
-- the **plugin** is the convenience layer
-- they work best together, but they are not the same thing
-
-## What makes it different
+## What makes this different?
 
 This project is **not** mainly trying to be:
 - a translation tool
 - a phrasebook
 - a giant per-language ruleset
-- a magical claim that all multilingual queries should be rewritten into English
+- a fake claim that multilingual retrieval is already solved forever
 
-Its real focus is narrower and more useful:
-- better target matching
-- better terminology bridging
-- better routing across memory, docs, skills, files, and exact technical surfaces
+Its real job is narrower and more useful:
+- improve multilingual-to-technical target matching
+- improve how assistants use memory, docs, config, runbooks, and semantic retrieval
+- reduce missed hits caused by language mismatch and terminology mismatch
 
 ## Current project status
 
 - Whole-project progress: ~96%
-- Current mainline: narrow v1 is signed off, and public-facing polish is underway
 - Public repo: live on GitHub
-- First ClawHub publication: live as a staged skill-first release
+- ClawHub skill: published
+- ClawHub plugin package: published
 - Stable conclusion: the bridge already improves retrieval and routing quality in a real, inspectable way
 
 ## Scope boundary
 
-This repo is a clean project boundary for the bridge work.
-It is meant to be readable, reviewable, and publishable without dragging in private workspace state.
-
-## Non-goals
-
-This project does not claim:
+This project does **not** claim:
 - perfect multilingual reasoning in every environment
-- backend retrieval improvements by itself
-- that official docs should be ignored in favor of local memory
-- that every non-English prompt should be forced into English
+- automatic improvement of the underlying vector database itself
+- that every non-English prompt should be rewritten into English
+- that official docs should be ignored in favor of memory
 
-## Current routing rule
+It is a bridge layer, not the whole stack.
 
-Do not route everything to one place.
-Choose the surface that actually matches the target:
-- prior work, local incidents, remembered decisions → memory first
-- upstream behavior, official command semantics, product docs → official docs first
-- installed-skill behavior → skill artifact first
-- local runbooks and recovery procedures → local file first
-- exact commands, paths, config keys, filenames → exact-token artifact first
+## Public links
 
-## Packaging note
-
-Right now, this repo keeps the skill, plugin, and validation story together because that is still the clearest review and maintenance boundary.
-The first public publication unit is the skill-facing asset, not the whole repo as one undifferentiated package.
-
-## License and attribution
-
-This repository is licensed under **Apache-2.0**.
-
-Repo-level attribution surfaces:
-- `LICENSE`
-- `NOTICE`
-
-## Public surfaces
-
-If you are discovering the project from one side, the other side is here too:
 - GitHub repo: https://github.com/ChriX-Goh/multilingual-semantic-bridge
-- ClawHub skill page: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
+- ClawHub skill: https://clawhub.ai/chrix-goh/multilingual-semantic-bridge
