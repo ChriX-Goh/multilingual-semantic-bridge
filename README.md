@@ -78,6 +78,18 @@ Choose the retrieval surface by target class:
 
 This repo is currently arranged as a clean GitHub/project boundary for the skill, the narrow v1 plugin package, and the shared validation/boundary docs that still evolve together.
 
+## Publication hygiene rule
+
+Public project docs in this repo distinguish between:
+- portable/default project guidance
+- local validation evidence
+- example-only configuration
+- author-local/operator-specific configuration
+
+Local validation evidence may appear in technical history or proof surfaces, but it should not be read as a universal default deployment path.
+
+See `docs/DEFAULT_VS_LOCAL_CLASSIFICATION_2026-04-18.md` for the current classification model.
+
 Current v1 decision:
 - keep the plugin as a sibling package inside this repo for now
 - do not split into a separate repo/package until real post-v1 usage justifies a cleaner separation

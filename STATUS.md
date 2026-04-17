@@ -38,4 +38,5 @@
 - Current hygiene judgment: attribution surfaces look normal, but several public docs still contain local validation endpoints/profile names that should be relabeled or separated before any public release.
 - Sustained execution cadence is now explicitly governed by `docs/SUSTAINED_EXECUTION_CADENCE_2026-04-18.md`.
 - Immediate governance move: complete the default-vs-local classification pass so public usage guidance and one-machine validation evidence are not mixed together.
+- Classification authority now exists at `docs/DEFAULT_VS_LOCAL_CLASSIFICATION_2026-04-18.md` and should govern future public-facing wording.
 - Immediate product move: continue with retrieval-vs-troubleshooting class-fit refinement as the next bounded hardening slice.
