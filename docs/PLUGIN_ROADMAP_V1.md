@@ -98,6 +98,12 @@ Work items:
 - document enable/disable/testTrigger flows cleanly
 - keep operator-facing behavior explicit and recoverable
 
+Current checkpoint:
+- v1 remains intentionally log-oriented rather than adding a larger command/control surface
+- operator controls are now explicitly documented as `enabled`, `testTrigger`, and `debug`
+- a dedicated validation workflow doc now exists at `docs/PLUGIN_VALIDATION_WORKFLOW_V1.md`
+- debug logging now records not only fire reasons but also selected intent, context style, and a short prompt preview for faster inspection
+
 Exit criteria:
 - debug approach agreed
 - validation workflow no longer depends on ad hoc tricks

@@ -211,6 +211,27 @@ Current meaning of this table:
 - the next question is no longer only whether the hook fires
 - the next question is whether the injected bridge block stays compact and meaningfully class-matched as coverage widens
 
+## M4 operator-control checkpoint (2026-04-17)
+
+The current v1 operator stance is now explicit rather than implicit:
+- keep the control surface small
+- use log-oriented observability rather than building a separate command surface too early
+- document safe validation instead of relying on operator memory
+
+Current explicit controls:
+- `enabled`
+- `testTrigger`
+- `debug`
+
+Current explicit workflow artifact:
+- `docs/PLUGIN_VALIDATION_WORKFLOW_V1.md`
+
+Current debug behavior when `debug=true`:
+- logs fire reasons
+- logs selected intent
+- logs selected context style
+- logs a short prompt preview for inspection without dumping a full prompt transcript
+
 ## Next use
 
 Use this matrix as the first compact check surface before expanding into a broader multilingual prompt set or full benchmark integration.

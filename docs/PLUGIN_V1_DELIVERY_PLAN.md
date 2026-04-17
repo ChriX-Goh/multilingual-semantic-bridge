@@ -63,7 +63,9 @@ Definition:
 - enable/disable/testTrigger/debug controls are documented
 
 Current state:
-- partial, but not yet clean enough for sustained maintenance
+- now moving from partial to explicit
+- minimal operator control surface remains intentionally small: `enabled`, `testTrigger`, `debug`
+- a dedicated validation workflow doc now records the safe isolated validation recipe and the split between decision-layer checks and runtime proofs
 
 ### M5. Plugin-skill cooperation contract
 Definition:
@@ -82,7 +84,9 @@ Definition:
 - v1 release decision can be made without hidden blockers
 
 Current state:
-- blocked on GitHub continuity
+- GitHub continuity repaired
+- tracked work items still not restored yet
+- package-boundary decision still pending
 
 ## 4. Work breakdown
 

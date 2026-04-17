@@ -14,3 +14,24 @@ Purpose of this version:
 - reduce activation failure for multilingual technical prompts without turning into a hidden backend rewrite
 - keep rollback easy
 - avoid premature always-on semantic rewriting
+
+## Current operator controls
+
+Config fields:
+- `enabled`
+- `testTrigger`
+- `debug`
+
+Practical meaning:
+- `enabled=false` disables the plugin cleanly
+- `testTrigger` can force activation for validation turns
+- `debug=true` logs structured fire reasons for troubleshooting and validation
+
+## Validation guidance
+
+Use two validation layers:
+- decision-layer validation via `plugin/logic.ts` + `scripts/validate-plugin-case-matrix.mjs`
+- isolated runtime proof on a pinned non-user-facing gateway path
+
+Do not validate by disturbing the active Control UI session.
+See `docs/PLUGIN_VALIDATION_WORKFLOW_V1.md` for the current safe validation recipe.

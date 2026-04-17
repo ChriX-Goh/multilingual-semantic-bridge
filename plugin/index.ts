@@ -21,6 +21,9 @@ export default definePluginEntry({
           agentId: ctx.agentId,
           sessionKey: ctx.sessionKey,
           reasons: decision.reasons,
+          intent: decision.intent,
+          contextStyle: decision.contextStyle,
+          promptPreview: prompt.slice(0, 160),
         });
       }
 

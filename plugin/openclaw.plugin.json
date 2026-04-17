@@ -9,9 +9,18 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "enabled": { "type": "boolean" },
-      "testTrigger": { "type": "string" },
-      "debug": { "type": "boolean" }
+      "enabled": {
+        "type": "boolean",
+        "description": "Enable or disable the multilingual bridge plugin."
+      },
+      "testTrigger": {
+        "type": "string",
+        "description": "Optional force-fire trigger used for validation turns."
+      },
+      "debug": {
+        "type": "boolean",
+        "description": "When true, log structured activation details for validation and troubleshooting."
+      }
     }
   }
 }
