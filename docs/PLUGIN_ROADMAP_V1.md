@@ -55,12 +55,12 @@ Current checkpoint:
 - intent-aware context styles now exist in the plugin for retrieval, config, docs, troubleshooting, and generic bridge routing
 - injected context now carries both `Bridge intent` and `Context style` instead of using one generic post-trigger block
 - isolated live runtime proof is now captured on an explicit pinned gateway path (`ws://127.0.0.1:19031`) across multiple sessions, not just one retrieval sample
-- confirmed live proof classes now include:
+- confirmed strong live proof classes now include:
   - retrieval / history recall via `bridgeproof-runtime-v1`
   - config / setup via `bridgeproof-config-v1`
-  - troubleshooting via `bridgeproof-troubleshooting-v1` (useful but slightly weaker because that run had a gateway-close wrinkle before embedded fallback)
+  - troubleshooting / symptom diagnosis via `bridgeproof-troubleshooting-v2`
 - strongest gateway evidence still includes `before_prompt_build`, `multilingual bridge hook fired`, and prompt mutation via `prependSystemContext/appendSystemContext` before model submission
-- next validation focus is filling one more strong non-retrieval proof without the fallback wrinkle, then tightening compactness and prompt-class fit before expanding coverage
+- next validation focus is no longer "get one more clean troubleshooting proof". It shifts to tightening compactness/prompt-class fit and then deciding whether the next strong proof should be docs/reference before broader coverage expansion
 
 Exit criteria:
 - prompt-context classes documented
@@ -158,8 +158,8 @@ Mitigation: keep local repo discipline, but explicitly carry GitHub repair as a 
 Start Phase B now.
 
 Concrete next slice:
-- upgrade the troubleshooting sample from a weaker fallback-tinged proof into a clean strong proof, or add a third strong class such as docs/reference
 - record a compact runtime-proof table that shows the chosen style for each proved trigger class
+- optionally add docs/reference as the next strong class if it reveals a meaningfully different prompt-time bridge value
 - tighten any remaining compactness/noise issues before expanding multilingual coverage
 
 This remains the highest-value next move because it upgrades the plugin from "fires correctly" to "helps correctly."

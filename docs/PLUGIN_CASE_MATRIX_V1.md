@@ -124,19 +124,21 @@ Interpretation:
 
 ### Proof 3, troubleshooting / symptom diagnosis
 Session:
-- `bridgeproof-troubleshooting-v1`
+- `bridgeproof-troubleshooting-v2`
 
 Prompt:
 - `bridge-plugin-test 为什么 OpenClaw 插件里总是报 token 错误？`
 
-Observed runtime evidence:
+Observed gateway evidence:
+- `[plugins] [hooks] running before_prompt_build (1 handlers, sequential)`
 - `[plugins] multilingual bridge hook fired`
-- final answer centered on auth mismatch diagnosis, gateway URL mismatch, auth mode mismatch, and token-source drift
+- `[agent/embedded] hooks: applied prependSystemContext/appendSystemContext (712+0 chars)`
+- downstream answer centered on token-type mismatch, auth-mode mismatch, bootstrap-token misuse, and token-source drift
 
 Interpretation:
-- even though this run returned through embedded fallback after a gateway close (`1006 abnormal closure`), the pinned run still produced plugin-hook evidence and a troubleshooting-shaped answer
-- treat this as a useful but slightly weaker proof than the first two because the gateway-close wrinkle should still be explained/cleaned up later
-- current live evidence now extends beyond retrieval into both config/setup and troubleshooting-oriented prompt classes
+- this replaces the earlier weaker troubleshooting sample that had a gateway-close wrinkle
+- the troubleshooting class is now also backed by a clean pinned-gateway proof, not only by answer-shape inference
+- current strong live evidence now spans retrieval, config/setup, and troubleshooting-oriented prompt classes
 
 ## Next use
 
