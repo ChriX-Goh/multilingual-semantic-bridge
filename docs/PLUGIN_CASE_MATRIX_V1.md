@@ -82,7 +82,7 @@ A broader curated coverage pass was then added for M3 using extracted pure decis
 - `scripts/plugin-case-matrix-cases.mjs`
 - `scripts/validate-plugin-case-matrix.mjs`
 
-Expanded result: 30/30 cases passed.
+Expanded result: 32/32 cases passed.
 
 What was added in this pass:
 - more colloquial Chinese/Cantonese phrasing (`點樣`, `點解`, `搵唔到`, `喺邊度`)
@@ -91,6 +91,7 @@ What was added in this pass:
 - more near-miss mixed-language non-trigger cases
 - one explicit pure-English setup case that should still stay outside the bridge
 - a post-v1 hardening pass for vague mixed-language usage/comparison prompts that should still stay quiet
+- a second post-v1 hardening pass for English-light artifact lookup/troubleshooting prompts that rely on loanwords such as `login`, `error`, `log`, and `sdk`
 
 Two real style mismatches surfaced before the final green pass:
 - colloquial install/setup phrasing around `plugin sdk` was initially falling into docs/reference instead of setup mapping
@@ -105,6 +106,7 @@ Current meaning of the matrix:
 - the plugin now has at least one documented false-positive/false-negative review loop inside M3, not only M1/M2 trigger tuning
 - broader coverage still remains curated and compact rather than pretending to be a full benchmark
 - the first post-v1 utility-hardening slice is now also reflected here: vague mixed-language comparison/usage prompts such as `repo 點樣 sync 比較好`, `skill 點樣用先最好`, `plugin 同 memory search 點樣配合`, and `plugin sdk 同 hook 差別係咩` are now explicitly expected to stay quiet rather than auto-triggering generic bridge mode
+- the second post-v1 utility-hardening slice is now also reflected here: English-light history/artifact lookup prompts such as `之前個 login error 筆記喺邊度？` and direct troubleshooting lookups such as `我想睇 error log` now trigger correctly instead of being missed due to too-narrow technical-anchor coverage
 
 ## Phase B context-style mapping checkpoint
 

@@ -28,5 +28,7 @@ export const cases = [
   { id: 'P01', prompt: 'OpenClaw repo 點樣 sync 比較好？', expected: false, style: null },
   { id: 'P02', prompt: 'OpenClaw skill 點樣用先最好？', expected: false, style: null },
   { id: 'P03', prompt: 'OpenClaw plugin 同 memory search 點樣配合？', expected: false, style: null },
-  { id: 'P04', prompt: '請問 OpenClaw plugin sdk 同 hook 差別係咩？', expected: false, style: null }
+  { id: 'P04', prompt: '請問 OpenClaw plugin sdk 同 hook 差別係咩？', expected: false, style: null },
+  { id: 'Q01', prompt: '之前個 login error 筆記喺邊度？', expected: true, style: 'history_recall' },
+  { id: 'Q02', prompt: '我想睇 error log', expected: true, style: 'symptom_diagnosis' }
 ];

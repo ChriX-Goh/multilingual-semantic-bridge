@@ -19,6 +19,12 @@ export const ENGLISH_TECH_TERMS = [
   "cli",
   "oauth",
   "token",
+  "login",
+  "error",
+  "errors",
+  "log",
+  "logs",
+  "sdk",
   "api",
   "prompt",
   "model",
@@ -30,7 +36,7 @@ export const ENGLISH_TECH_TERMS = [
   "ssh",
 ];
 
-export const BRIDGE_INTENT_PATTERN = /怎么|為什麼|为什么|如何|怎樣|点样|點樣|咋|點解|点解|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|搜不到|搜唔到|搵唔到|命中|登入|登录|連接|连接|documentation|docs|hook|config|token|error|issue|setup|install|why|how/u;
+export const BRIDGE_INTENT_PATTERN = /怎么|為什麼|为什么|如何|怎樣|点样|點樣|咋|點解|点解|設定|设置|配置|報錯|报错|失敗|失败|找不到|找唔到|搜不到|搜唔到|搵唔到|命中|喺邊度|邊度|在哪里|在哪裡|登入|登录|連接|连接|documentation|docs|hook|config|token|error|issue|setup|install|why|how/u;
 export const CONCEPTUAL_COMPARISON_PATTERN = /区别|區別|区分|作用|是什么|什麼|差別|差别|比較|比较|配合|運作|运作|原理/u;
 export const VAGUE_USAGE_PATTERN = /點樣用|点样用|怎樣用|怎么用|如何用|點樣先最好|怎么才好|比較好|比较好/u;
 
