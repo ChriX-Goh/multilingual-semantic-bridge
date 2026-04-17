@@ -135,5 +135,5 @@ This skill remains the deeper method.
 Use the plugin as the first lightweight bridge layer when the target class is already fairly obvious.
 Use the fuller skill discipline when the real work is target-surface arbitration, canonical-intent derivation, or reusable terminology mapping.
 
-See:
-- `docs/PLUGIN_SKILL_COOPERATION_CONTRACT_V1.md`
+See the GitHub repo for the current plugin cooperation contract and broader project context:
+- https://github.com/ChriX-Goh/multilingual-semantic-bridge
