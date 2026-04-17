@@ -5,10 +5,12 @@ description: Help non-English-first users hit the right technical answer when do
 
 # Multilingual Semantic Bridge
 
-This skill is for a very common technical mismatch:
-- the user asks naturally in one language
-- the system names the answer in another language, usually English-heavy technical terminology
-- the assistant needs help connecting the two
+Sometimes one phrasing hits and another phrasing misses.
+Sometimes a synonym misses.
+Sometimes a different language misses.
+Sometimes the answer is already in memory, docs, config, a runbook, or a skill, but retrieval still fails because the wording and the stored technical target do not line up cleanly enough.
+
+This skill exists to reduce that failure mode.
 
 Use this skill to bridge between:
 - the user's wording

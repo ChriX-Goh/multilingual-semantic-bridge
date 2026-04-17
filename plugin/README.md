@@ -1,57 +1,48 @@
 # Multilingual Semantic Bridge Plugin Prototype
 
-A lightweight automatic trigger for **non-English-first technical prompts** that would otherwise miss the right English-heavy technical target.
+A lightweight trigger layer for cases where one phrasing hits, but a paraphrase, synonym, or different language version would otherwise miss the right technical target.
 
-## What pain point does this plugin solve?
+## The user problem first
 
-Sometimes the system already has the answer, but it fails too early.
-The user asks naturally in Chinese, Japanese, Korean, Spanish, Arabic, Hindi, or another non-English-first language.
-The real target lives under English-heavy technical terms.
-The assistant does not notice soon enough that it should switch into bridge mode.
+Sometimes the system already has the answer.
+But it misses too early.
+
+A user asks naturally.
+Then asks again with a different phrasing.
+Or asks in French, Japanese, Korean, Spanish, Russian, Arabic, Chinese, or English using less official wording.
+And the assistant fails to switch into the right retrieval posture soon enough.
 
 This plugin exists to catch that moment earlier.
 
+## What this plugin changes
+
+Without the plugin:
+- the assistant may treat a multilingual or paraphrased technical question too literally
+- the retrieval path may stay too shallow or too generic
+- the right docs, memory, config, or runbook target may never get selected
+
+With the plugin:
+- likely bridge-worthy prompts get noticed earlier
+- the assistant gets a better initial bridge posture
+- the deeper skill can take over more effectively when needed
+
 ## Relationship to the skill
 
-This plugin is best used together with the **Multilingual Semantic Bridge skill**.
+This plugin works best together with the **Multilingual Semantic Bridge skill**.
 
 In plain language:
-- the **plugin** notices when a multilingual technical prompt probably needs bridge help
+- the **plugin** notices that bridge help is probably needed
 - the **skill** carries the fuller bridge method
 
 So:
-- plugin-only can still help in simpler cases
-- but **plugin + skill together** is the stronger intended setup
-- this plugin should be understood as an accelerator, not the whole solution
+- plugin-only can help in simpler cases
+- **plugin + skill together** is the stronger intended setup
+- this plugin is an accelerator, not the whole solution
 
-## Where vector and retrieval fit
+## Where vector retrieval fits
 
-This plugin is related to semantic retrieval and vector-backed systems, but it does not replace them.
-Its job is to help the assistant trigger the right retrieval posture earlier.
-
-That means it helps with:
-- better early detection
-- better retrieval intent shaping
-- better routing into the deeper bridge method when needed
-
-## What this plugin does
-
-The plugin does a narrow job:
-- detect likely bridge-worthy multilingual technical prompts
-- select a compact context style
-- stay auditable, bounded, and easy to disable
-
-## Current state
-- native OpenClaw plugin scaffold
-- uses `before_prompt_build`
-- supports configured test-trigger validation
-- supports the current narrow multilingual technical heuristic layer
-- routes trigger cases into compact context styles for retrieval, setup, docs/reference, troubleshooting, or generic bridge help
-
-## Why it is intentionally narrow
-
-This plugin is not meant to become a hidden always-on rewrite layer.
-Its job is to create a better entry point, not silently replace the whole retrieval stack.
+This plugin is related to semantic and vector retrieval, but it does not replace them.
+Its role is to improve the assistant's early trigger and retrieval posture, not to replace the engine underneath.
 
 ## Public project links
 - GitHub project: https://github.com/ChriX-Goh/multilingual-semantic-bridge

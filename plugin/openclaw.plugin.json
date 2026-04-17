@@ -1,7 +1,7 @@
 {
   "id": "multilingual-semantic-bridge",
   "name": "Multilingual Semantic Bridge",
-  "description": "Automatic narrow on-ramp for multilingual bridge activation. Best used together with the Multilingual Semantic Bridge skill.",
+  "description": "Automatic trigger layer for cases where one phrasing, synonym, or language variant would otherwise miss the right technical target. Best used together with the Multilingual Semantic Bridge skill.",
   "activation": {
     "onCapabilities": ["hook"]
   },
